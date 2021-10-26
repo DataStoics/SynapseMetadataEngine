@@ -1,0 +1,20 @@
+{
+	"name": "MetadataDrivenCopyTask_7pd_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_Metadata",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_7pd_20211025"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "ctrl",
+			"table": "MainControlTable_7pd"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
