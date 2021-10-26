@@ -1,16 +1,15 @@
 {
 	"name": "Metadataengine",
-	"type": "Microsoft.Synapse/workspaces/linkedservices",
 	"properties": {
 		"description": "This is the Main Linked service that communicates with the Metadata Engine",
 		"parameters": {
 			"SynapseWS": {
 				"type": "string",
-				"defaultValue": "synapsemetadataengine"
+				"defaultValue": "rpsynapsewsdi"
 			},
 			"SynapsePool": {
 				"type": "string",
-				"defaultValue": "mesqldw"
+				"defaultValue": "SQLPool01"
 			}
 		},
 		"annotations": [],
@@ -22,5 +21,6 @@
 			"referenceName": "AutoResolveIntegrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.Synapse/workspaces/linkedservices"
 }
