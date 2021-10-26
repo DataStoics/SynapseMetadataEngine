@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "rpsynapsewsdi01"
+		},
+		"rpsynapsewsdi01-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kvltadfmetadata.vault.azure.net/"
+		},
+		"rpsynapsewsdi01-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://rpadfmetadata.dfs.core.windows.net"
+		}
+	}
+}
