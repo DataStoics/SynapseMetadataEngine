@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sqlOnDemand--rpsynapsewsdi01",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ed780b0d-a01c-4a39-982b-949f0c8c84e3/resourceGroups/rg-adf-metadata-driven/providers/Microsoft.Synapse/workspaces/rpsynapsewsdi01",
+		"groupId": "sqlOnDemand",
+		"fqdns": [
+			"rpsynapsewsdi01-ondemand.ef7288ff-ffbe-40fa-a991-f9568691192f.sql.azuresynapse.net"
+		]
+	}
+}

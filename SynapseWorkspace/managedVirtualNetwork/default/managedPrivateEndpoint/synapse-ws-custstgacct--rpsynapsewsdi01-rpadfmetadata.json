@@ -1,0 +1,7 @@
+{
+	"name": "synapse-ws-custstgacct--rpsynapsewsdi01-rpadfmetadata",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ed780b0d-a01c-4a39-982b-949f0c8c84e3/resourceGroups/rg-adf-metadata-driven/providers/Microsoft.Storage/storageAccounts/rpadfmetadata",
+		"groupId": "dfs"
+	}
+}
