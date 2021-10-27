@@ -1,0 +1,14 @@
+{
+	"name": "LS_ASA_SQLPool01",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=rpsynapsewsdi01.sql.azuresynapse.net;Initial Catalog=SQLPool01"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
