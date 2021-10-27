@@ -5,8 +5,8 @@
 			"referenceName": "Metadataengine",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"SynapseWS": "synapsemetadataengine",
-				"SynapsePool": "mesqldw"
+				"SynapseWS": "rpsynapsewsdi01",
+				"SynapsePool": "SQLPool01"
 			}
 		},
 		"parameters": {

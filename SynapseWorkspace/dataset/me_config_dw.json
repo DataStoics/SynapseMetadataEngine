@@ -3,7 +3,11 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Metadataengine",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"SynapseWS": "rpsynapsewsdi01",
+				"SynapsePool": "SQLPool01"
+			}
 		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
