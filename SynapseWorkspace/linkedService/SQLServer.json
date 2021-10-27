@@ -1,19 +1,22 @@
 {
 	"name": "SQLServer",
-	"type": "Microsoft.Synapse/workspaces/linkedservices",
 	"properties": {
 		"parameters": {
 			"SqlServerName": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "rpadfmetadatademo.database.windows.net"
 			},
 			"SqlDatabaseName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "AdventureWorks "
 			},
 			"sqlusername": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "repajta"
 			},
 			"kvsecretname": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "SQLServer-AdventureWorks-Secret"
 			}
 		},
 		"annotations": [],
@@ -36,5 +39,6 @@
 			"referenceName": "AutoResolveIntegrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.Synapse/workspaces/linkedservices"
 }
