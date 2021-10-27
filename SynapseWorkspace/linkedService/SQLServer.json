@@ -36,7 +36,7 @@
 			}
 		},
 		"connectVia": {
-			"referenceName": "AutoResolveIntegrationRuntime",
+			"referenceName": "SHIR01",
 			"type": "IntegrationRuntimeReference"
 		}
 	},
