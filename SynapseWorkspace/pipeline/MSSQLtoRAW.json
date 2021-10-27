@@ -1,5 +1,5 @@
 {
-	"name": "IngestMSSQLDataToRaw",
+	"name": "MSSQLtoRAW",
 	"properties": {
 		"activities": [
 			{
@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlDWSource",
-						"sqlReaderStoredProcedureName": "[ME_Config].[sp_ADFGetDynamicRDBMSQuery]",
+						"sqlReaderStoredProcedureName": "[ME_Data].[sp_ADFGetSQLConfig]",
 						"storedProcedureParameters": {
 							"DataSetType": {
 								"type": "String",
@@ -61,7 +61,6 @@
 						"value": "@activity('GetConfigurations').output.value",
 						"type": "Expression"
 					},
-					"isSequential": false,
 					"activities": [
 						{
 							"name": "Execute Generic Pipeline",
@@ -109,53 +108,6 @@
 									}
 								}
 							}
-						},
-						{
-							"name": "ME_Stage_InsertDatageEntry",
-							"type": "SqlServerStoredProcedure",
-							"dependsOn": [
-								{
-									"activity": "Execute Generic Pipeline",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"storedProcedureName": "[ME_Stage].[InsertDataStageEntry]",
-								"storedProcedureParameters": {
-									"DatasetID": {
-										"value": {
-											"value": "@{item().DatasetID}",
-											"type": "Expression"
-										},
-										"type": "Int32"
-									},
-									"Partition_String": {
-										"value": {
-											"value": "@{item().Target_Partition}",
-											"type": "Expression"
-										},
-										"type": "String"
-									},
-									"Row_Count": {
-										"value": "0",
-										"type": "Int64"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "Metadataengine",
-								"type": "LinkedServiceReference"
-							}
 						}
 					]
 				}
@@ -163,17 +115,19 @@
 		],
 		"parameters": {
 			"DataSetType": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "MSSQL"
 			},
 			"RunGroupCode": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "999"
 			}
 		},
 		"folder": {
-			"name": "MetadataEngine/ParentPipelines"
+			"name": "MetadataEngine/ChildPipelines"
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-01-13T20:59:46Z"
+		"lastPublishTime": "2021-01-07T09:08:22Z"
 	},
 	"type": "Microsoft.Synapse/workspaces/pipelines"
 }
