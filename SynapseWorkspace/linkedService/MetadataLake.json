@@ -7,7 +7,7 @@
 			"url": "https://rpadfmetadata.dfs.core.windows.net/"
 		},
 		"connectVia": {
-			"referenceName": "AutoResolveIntegrationRuntime",
+			"referenceName": "SHIR01",
 			"type": "IntegrationRuntimeReference"
 		}
 	},
