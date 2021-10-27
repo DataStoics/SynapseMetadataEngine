@@ -18,7 +18,7 @@
 			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=\"@{concat(linkedService().SynapseWS,'.database.windows.net')}\";Initial Catalog=@{linkedService().SynapsePool}"
 		},
 		"connectVia": {
-			"referenceName": "AutoResolveIntegrationRuntime",
+			"referenceName": "SHIR01",
 			"type": "IntegrationRuntimeReference"
 		}
 	},
