@@ -134,7 +134,7 @@
 								"storedProcedureParameters": {
 									"DatasetID": {
 										"value": {
-											"value": "@{item().DatasetID}",
+											"value": "@{item().DataSetID}",
 											"type": "Expression"
 										},
 										"type": "Int32"
@@ -154,7 +154,11 @@
 							},
 							"linkedServiceName": {
 								"referenceName": "Metadataengine",
-								"type": "LinkedServiceReference"
+								"type": "LinkedServiceReference",
+								"parameters": {
+									"SynapseWS": "rpsynapsewsdi01",
+									"SynapsePool": "SQLPool01"
+								}
 							}
 						}
 					]
