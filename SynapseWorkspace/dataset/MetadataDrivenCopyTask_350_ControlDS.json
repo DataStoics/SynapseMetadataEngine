@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_350_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_Metadata",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_350_20211028"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "copytest",
+			"table": "MainControlTable"
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"name": "MetadataDrivenCopyTask_350_DestinationDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MetadataLake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			},
+			"cw_folderPath": {
+				"type": "String"
+			},
+			"cw_fileSystem": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_350_20211028"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().cw_folderPath",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().cw_fileSystem",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
