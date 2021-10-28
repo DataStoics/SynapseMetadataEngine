@@ -1,0 +1,63 @@
+{
+	"name": "MetadataDrivenCopyTask_350_SourceDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLServer",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"SqlServerName": {
+					"value": "@dataset().cw_ls_SqlServerName",
+					"type": "Expression"
+				},
+				"SqlDatabaseName": {
+					"value": "@dataset().cw_ls_SqlDatabaseName",
+					"type": "Expression"
+				},
+				"sqlusername": {
+					"value": "@dataset().cw_ls_sqlusername",
+					"type": "Expression"
+				},
+				"kvsecretname": {
+					"value": "@dataset().cw_ls_kvsecretname",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"cw_schema": {
+				"type": "String"
+			},
+			"cw_table": {
+				"type": "String"
+			},
+			"cw_ls_SqlServerName": {
+				"type": "String"
+			},
+			"cw_ls_SqlDatabaseName": {
+				"type": "String"
+			},
+			"cw_ls_sqlusername": {
+				"type": "String"
+			},
+			"cw_ls_kvsecretname": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_350_20211028"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().cw_schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().cw_table",
+				"type": "Expression"
+			}
+		}
+	}
+}
