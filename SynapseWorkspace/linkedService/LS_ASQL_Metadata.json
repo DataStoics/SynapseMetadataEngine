@@ -1,0 +1,14 @@
+{
+	"name": "LS_ASQL_Metadata",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=rpadfmetadatademo.database.windows.net;Initial Catalog=ADFMetadata"
+		},
+		"connectVia": {
+			"referenceName": "SHIR01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
