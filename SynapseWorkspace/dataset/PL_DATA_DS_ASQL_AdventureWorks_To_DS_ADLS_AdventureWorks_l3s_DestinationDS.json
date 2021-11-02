@@ -1,0 +1,44 @@
+{
+	"name": "PL_DATA_DS_ASQL_AdventureWorks_To_DS_ADLS_AdventureWorks_l3s_DestinationDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			},
+			"cw_folderPath": {
+				"type": "String"
+			},
+			"cw_fileSystem": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "PL_DATA_DS_ASQL_AdventureWorks_To_DS_ADLS_AdventureWorks_l3s_20211102"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().cw_folderPath",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().cw_fileSystem",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
