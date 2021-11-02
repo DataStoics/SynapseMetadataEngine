@@ -1,0 +1,154 @@
+{
+	"name": "OrderLineCharge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "OrderLineCharge",
+		"Description": "A charge at the Invoice Line Level.\n\nEx:\n- Freight for a specific Invoice Line Item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineCharge.cdm.json/OrderLineCharge",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineCharge.cdm.json/OrderLineCharge",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderChargeTypeId",
+					"Description": "The unique identifier of an Order Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineCharge.cdm.json/OrderLineCharge",
+						"Name": "OrderChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineChargeAmount",
+					"Description": "The amount of the charge.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineCharge.cdm.json/OrderLineCharge",
+						"Name": "OrderLineChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineCharge.cdm.json/OrderLineCharge",
+						"Name": "ChargeByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineChargeNote",
+					"Description": "A note, comment or additional information regarding the charge.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineCharge.cdm.json/OrderLineCharge",
+						"Name": "OrderLineChargeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineCharge",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineCharge",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderLineNumber\"},\"OrderChargeTypeId\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderChargeTypeId\"},\"OrderLineChargeAmount\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderLineChargeAmount\"},\"ChargeByPartyId\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"ChargeByPartyId\"},\"OrderLineChargeNote\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderLineChargeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderLineCharge\",\"path\":\"OrderLineCharge.cdm.json/OrderLineCharge\"},\"description\":\"A charge at the Invoice Line Level.\\n\\nEx:\\n- Freight for a specific Invoice Line Item.\",\"primaryKey\":[\"OrderId\",\"OrderLineNumber\",\"OrderChargeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderChargeTypeId\",\"attributeReference\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderChargeTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderLineChargeAmount\",\"attributeReference\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderLineChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ChargeByPartyId\",\"attributeReference\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"ChargeByPartyId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineChargeNote\",\"attributeReference\":{\"entity\":\"OrderLineCharge.cdm.json/OrderLineCharge\",\"name\":\"OrderLineChargeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A charge at the Invoice Line Level.\n\nEx:\n- Freight for a specific Invoice Line Item.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,OrderLineNumber,OrderChargeTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,221 @@
+{
+	"name": "ShipmentService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "ShipmentService",
+		"Description": "The Service(s) requested or ordered with or for a shipment.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentServiceTypeId",
+					"Description": "The unique identifier of a service.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ShipmentServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestedTimestamp",
+					"Description": "The timestamp that the service was requested on behalf of the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ServiceRequestedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ServiceDeliveredTimestamp",
+					"Description": "The timestamp that the service was performed or delivered on behalf of the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ServiceDeliveredTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ServiceCompletedTimestamp",
+					"Description": "The timestamp that the service was completed or finished on behalf of the Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ServiceCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ServiceChargeAmount",
+					"Description": "The charge amount for the service.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ServiceChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentServiceNote",
+					"Description": "A note, comment or additional information regarding the shipment service.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ShipmentServiceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentOrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ShipmentOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentOrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentService.cdm.json/ShipmentService",
+						"Name": "ShipmentOrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/ShipmentService",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/ShipmentService",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentId\"},\"ShipmentServiceTypeId\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentServiceTypeId\"},\"ServiceRequestedTimestamp\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceRequestedTimestamp\"},\"ServiceDeliveredTimestamp\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceDeliveredTimestamp\"},\"ServiceCompletedTimestamp\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceCompletedTimestamp\"},\"ServiceChargeAmount\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceChargeAmount\"},\"ShipmentServiceNote\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentServiceNote\"},\"VendorId\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"VendorId\"},\"ShipmentOrderId\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentOrderId\"},\"ShipmentOrderLineNumber\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentOrderLineNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentService\",\"path\":\"ShipmentService.cdm.json/ShipmentService\"},\"description\":\"The Service(s) requested or ordered with or for a shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentServiceTypeId\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentServiceTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestedTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceRequestedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ServiceDeliveredTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceDeliveredTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ServiceCompletedTimestamp\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceCompletedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ServiceChargeAmount\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ServiceChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShipmentServiceNote\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentServiceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"VendorId\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"VendorId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentOrderId\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentOrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ShipmentOrderLineNumber\",\"attributeReference\":{\"entity\":\"ShipmentService.cdm.json/ShipmentService\",\"name\":\"ShipmentOrderLineNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The Service(s) requested or ordered with or for a shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentServiceTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

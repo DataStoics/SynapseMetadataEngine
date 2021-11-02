@@ -1,0 +1,105 @@
+{
+	"name": "BuyClass",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "BuyClass",
+		"Description": "A category that distinguishes the purchasing decisions in the buying process.\n\nThere are typically three buy classes defined:\n\n1.  Straight Rebuys - involving routine, repetitive purchases of products.\n\n2.  Modified Rebuys - involving the procurement of new products that cost more or have new features of upgraded specifications.\n\n3.  New Buys - which are new purchases",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BuyClassId",
+					"Description": "The unique identifier of a Buy Class.",
+					"BaseAttributeReference": {
+						"Entity": "BuyClass.cdm.json/BuyClass",
+						"Name": "BuyClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BuyClassName",
+					"Description": "The name of the Buy Class.",
+					"BaseAttributeReference": {
+						"Entity": "BuyClass.cdm.json/BuyClass",
+						"Name": "BuyClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BuyClassDescription",
+					"Description": "The description of the Buy Class.",
+					"BaseAttributeReference": {
+						"Entity": "BuyClass.cdm.json/BuyClass",
+						"Name": "BuyClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/BuyClass",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/BuyClass",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BuyClassId\":{\"entity\":\"BuyClass.cdm.json/BuyClass\",\"name\":\"BuyClassId\"},\"BuyClassName\":{\"entity\":\"BuyClass.cdm.json/BuyClass\",\"name\":\"BuyClassName\"},\"BuyClassDescription\":{\"entity\":\"BuyClass.cdm.json/BuyClass\",\"name\":\"BuyClassDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BuyClass\",\"path\":\"BuyClass.cdm.json/BuyClass\"},\"description\":\"A category that distinguishes the purchasing decisions in the buying process.\\n\\nThere are typically three buy classes defined:\\n\\n1.  Straight Rebuys - involving routine, repetitive purchases of products.\\n\\n2.  Modified Rebuys - involving the procurement of new products that cost more or have new features of upgraded specifications.\\n\\n3.  New Buys - which are new purchases\",\"primaryKey\":[\"BuyClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"BuyClassId\",\"attributeReference\":{\"entity\":\"BuyClass.cdm.json/BuyClass\",\"name\":\"BuyClassId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BuyClassName\",\"attributeReference\":{\"entity\":\"BuyClass.cdm.json/BuyClass\",\"name\":\"BuyClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"BuyClassDescription\",\"attributeReference\":{\"entity\":\"BuyClass.cdm.json/BuyClass\",\"name\":\"BuyClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512}]}}}",
+			"Description": "A category that distinguishes the purchasing decisions in the buying process.\n\nThere are typically three buy classes defined:\n\n1.  Straight Rebuys - involving routine, repetitive purchases of products.\n\n2.  Modified Rebuys - involving the procurement of new products that cost more or have new features of upgraded specifications.\n\n3.  New Buys - which are new purchases",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#F775C5\"}",
+			"PrimaryKeys": "BuyClassId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

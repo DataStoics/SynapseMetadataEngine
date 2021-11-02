@@ -1,0 +1,223 @@
+{
+	"name": "OrderItemAllocation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "OrderItemAllocation",
+		"Description": "The reservation of Items (material) for a specific use - usually an out-bound Order - from a specific Inventory Location.\n\nItems are allocated or reserved in a specific inventory location.\n\nAllocation is best delayed until just prior to picking and shipping.\n\nNote:\nSince Item(s) may be allocated from one or more inventory locations, the locations components must be identifying.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "WarehouseLocationId",
+					"Description": "The unique identifier of a location.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "WarehouseLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RequestedItemAllocationQuantity",
+					"Description": "The quantity of Item(s) requested for allocation to the Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "RequestedItemAllocationQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AllocatedItemQuantity",
+					"Description": "The quantity of Items allocated.\n\nAllocations are done by Item not Inventory Location.    \n\nIf a product can be stored in more than one location, employees must record the actual storage locations affected every time material is moved.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "AllocatedItemQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemVarianceQuantity",
+					"Description": "The quantity of Item(s) that is on variance for the allocation.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "ItemVarianceQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AllocationInstruction",
+					"Description": "Special instructions regarding the allocation of the Item(s) for the Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "AllocationInstruction"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AllocationVarianceReasonId",
+					"Description": "The unique identifier of the Allocation Variance Reason.",
+					"BaseAttributeReference": {
+						"Entity": "OrderItemAllocation.cdm.json/OrderItemAllocation",
+						"Name": "AllocationVarianceReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderItemAllocation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderItemAllocation",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderLineNumber\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"OrderLineNumber\"},\"ItemSku\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"ItemSku\"},\"WarehouseLocationId\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"WarehouseLocationId\"},\"WarehouseId\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"WarehouseId\"},\"OrderId\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"OrderId\"},\"RequestedItemAllocationQuantity\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"RequestedItemAllocationQuantity\"},\"AllocatedItemQuantity\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"AllocatedItemQuantity\"},\"ItemVarianceQuantity\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"ItemVarianceQuantity\"},\"AllocationInstruction\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"AllocationInstruction\"},\"AllocationVarianceReasonId\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"AllocationVarianceReasonId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderItemAllocation\",\"path\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\"},\"description\":\"The reservation of Items (material) for a specific use - usually an out-bound Order - from a specific Inventory Location.\\n\\nItems are allocated or reserved in a specific inventory location.\\n\\nAllocation is best delayed until just prior to picking and shipping.\\n\\nNote:\\nSince Item(s) may be allocated from one or more inventory locations, the locations components must be identifying.\",\"primaryKey\":[\"OrderLineNumber\",\"ItemSku\",\"WarehouseLocationId\",\"WarehouseId\",\"OrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"WarehouseLocationId\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"WarehouseLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"WarehouseId\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"RequestedItemAllocationQuantity\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"RequestedItemAllocationQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AllocatedItemQuantity\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"AllocatedItemQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ItemVarianceQuantity\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"ItemVarianceQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"AllocationInstruction\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"AllocationInstruction\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"AllocationVarianceReasonId\",\"attributeReference\":{\"entity\":\"OrderItemAllocation.cdm.json/OrderItemAllocation\",\"name\":\"AllocationVarianceReasonId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The reservation of Items (material) for a specific use - usually an out-bound Order - from a specific Inventory Location.\n\nItems are allocated or reserved in a specific inventory location.\n\nAllocation is best delayed until just prior to picking and shipping.\n\nNote:\nSince Item(s) may be allocated from one or more inventory locations, the locations components must be identifying.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "OrderLineNumber,ItemSku,WarehouseLocationId,WarehouseId,OrderId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

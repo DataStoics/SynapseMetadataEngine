@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rqbzhrqnid",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-rqbzhrqnid",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Order",
+		"ToTableName": "CommunicationReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "OrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Order.cdm.json/Order\",\"toEntity\":\"CommunicationReason.cdm.json/CommunicationReason\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"OrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "OrderPayment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "OrderPayment",
+		"Description": "The one or more payments that settle the order.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPayment.cdm.json/OrderPayment",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PaymentId",
+					"Description": "The unique identifier of a Payment.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPayment.cdm.json/OrderPayment",
+						"Name": "PaymentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AmountAppliedToOrder",
+					"Description": "The amount of the associated payment applied to the order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPayment.cdm.json/OrderPayment",
+						"Name": "AmountAppliedToOrder"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderPayment",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderPayment",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderPayment.cdm.json/OrderPayment\",\"name\":\"OrderId\"},\"PaymentId\":{\"entity\":\"OrderPayment.cdm.json/OrderPayment\",\"name\":\"PaymentId\"},\"AmountAppliedToOrder\":{\"entity\":\"OrderPayment.cdm.json/OrderPayment\",\"name\":\"AmountAppliedToOrder\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderPayment\",\"path\":\"OrderPayment.cdm.json/OrderPayment\"},\"description\":\"The one or more payments that settle the order.\",\"primaryKey\":[\"OrderId\",\"PaymentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"OrderPayment.cdm.json/OrderPayment\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PaymentId\",\"attributeReference\":{\"entity\":\"OrderPayment.cdm.json/OrderPayment\",\"name\":\"PaymentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AmountAppliedToOrder\",\"attributeReference\":{\"entity\":\"OrderPayment.cdm.json/OrderPayment\",\"name\":\"AmountAppliedToOrder\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The one or more payments that settle the order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,PaymentId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

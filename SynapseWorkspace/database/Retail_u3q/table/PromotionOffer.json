@@ -1,0 +1,186 @@
+{
+	"name": "PromotionOffer",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "PromotionOffer",
+		"Description": "An offer that is associated with a promotion.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PromotionOfferId",
+					"Description": "The unique identifier of a Promotion Offer. The Promotion Offer ID is unique to each account or party that is offered to.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "PromotionOfferId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PromotionId",
+					"Description": "The unique identifier of a Promotion.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "PromotionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PromotionOfferValidStartTimestamp",
+					"Description": "The period start timestamp that the offer is valid or effective as-of.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "PromotionOfferValidStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PromotionOfferValidEndTimestamp",
+					"Description": "The period end timestamp that the offer is valid or effective as-of.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "PromotionOfferValidEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PromotionOfferDescription",
+					"Description": "A description of the offer.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "PromotionOfferDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LoyaltyProgramId",
+					"Description": "The unique identifier of a Loyalty Program.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "LoyaltyProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LoyaltyAccountId",
+					"Description": "The unique identifier of a Loyalty Account.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "LoyaltyAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "PromotionOffer.cdm.json/PromotionOffer",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/PromotionOffer",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/PromotionOffer",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PromotionOfferId\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferId\"},\"PromotionId\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionId\"},\"PromotionOfferValidStartTimestamp\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferValidStartTimestamp\"},\"PromotionOfferValidEndTimestamp\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferValidEndTimestamp\"},\"PromotionOfferDescription\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferDescription\"},\"LoyaltyProgramId\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"LoyaltyProgramId\"},\"LoyaltyAccountId\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"LoyaltyAccountId\"},\"CustomerId\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"CustomerId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PromotionOffer\",\"path\":\"PromotionOffer.cdm.json/PromotionOffer\"},\"description\":\"An offer that is associated with a promotion.\",\"primaryKey\":[\"PromotionOfferId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PromotionOfferId\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PromotionId\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PromotionOfferValidStartTimestamp\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferValidStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PromotionOfferValidEndTimestamp\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferValidEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PromotionOfferDescription\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"PromotionOfferDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"LoyaltyProgramId\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"LoyaltyProgramId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LoyaltyAccountId\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"LoyaltyAccountId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerId\",\"attributeReference\":{\"entity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"name\":\"CustomerId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "An offer that is associated with a promotion.",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#000F5C\"}",
+			"PrimaryKeys": "PromotionOfferId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

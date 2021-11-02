@@ -1,0 +1,156 @@
+{
+	"name": "PickListItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "PickListItem",
+		"Description": "The items picked from the Pick List for the associated Order Line Item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PickListId",
+					"Description": "The unique identifier of a Pick List.",
+					"BaseAttributeReference": {
+						"Entity": "PickListItem.cdm.json/PickListItem",
+						"Name": "PickListId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "PickListItem.cdm.json/PickListItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemQuantity",
+					"Description": "The quantity of item to be picked.",
+					"BaseAttributeReference": {
+						"Entity": "PickListItem.cdm.json/PickListItem",
+						"Name": "ItemQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "PickListItem.cdm.json/PickListItem",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "PickListItem.cdm.json/PickListItem",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderItemQuantity",
+					"Description": "The quantity of item ordered upon the related order - order line item.",
+					"BaseAttributeReference": {
+						"Entity": "PickListItem.cdm.json/PickListItem",
+						"Name": "OrderItemQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/PickListItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/PickListItem",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PickListId\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"PickListId\"},\"ItemSku\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"ItemSku\"},\"ItemQuantity\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"ItemQuantity\"},\"OrderId\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"OrderLineNumber\"},\"OrderItemQuantity\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"OrderItemQuantity\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PickListItem\",\"path\":\"PickListItem.cdm.json/PickListItem\"},\"description\":\"The items picked from the Pick List for the associated Order Line Item.\",\"primaryKey\":[\"PickListId\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PickListId\",\"attributeReference\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"PickListId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"ItemQuantity\",\"attributeReference\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"ItemQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderItemQuantity\",\"attributeReference\":{\"entity\":\"PickListItem.cdm.json/PickListItem\",\"name\":\"OrderItemQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2}]}}}",
+			"Description": "The items picked from the Pick List for the associated Order Line Item.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "PickListId,ItemSku",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

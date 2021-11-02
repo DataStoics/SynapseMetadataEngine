@@ -1,0 +1,26 @@
+{
+	"name": "relationship-psqhyqtwqy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-psqhyqtwqy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PromotionOffer",
+		"ToTableName": "OrderLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PromotionOfferId",
+				"ToColumnName": "PromotionOfferId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PromotionOffer.cdm.json/PromotionOffer\",\"toEntity\":\"OrderLine.cdm.json/OrderLine\",\"joinPairs\":[{\"fromAttribute\":\"PromotionOfferId\",\"toAttribute\":\"PromotionOfferId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

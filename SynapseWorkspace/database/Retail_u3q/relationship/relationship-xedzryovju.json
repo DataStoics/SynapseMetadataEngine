@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xedzryovju",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-xedzryovju",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Order",
+		"ToTableName": "OrderPayment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "OrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Order.cdm.json/Order\",\"toEntity\":\"OrderPayment.cdm.json/OrderPayment\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"OrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

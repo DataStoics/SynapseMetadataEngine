@@ -1,0 +1,26 @@
+{
+	"name": "relationship-huhnogkexy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-huhnogkexy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BuyClass",
+		"ToTableName": "OrderLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BuyClassId",
+				"ToColumnName": "BuyClassId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BuyClass.cdm.json/BuyClass\",\"toEntity\":\"OrderLine.cdm.json/OrderLine\",\"joinPairs\":[{\"fromAttribute\":\"BuyClassId\",\"toAttribute\":\"BuyClassId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

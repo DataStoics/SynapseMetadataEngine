@@ -1,0 +1,296 @@
+{
+	"name": "PurchaseOrderLine",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "PurchaseOrderLine",
+		"Description": "The specific products, goods or services that are identified on the Purchase Order.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PoNumber",
+					"Description": "The unique identifier of a Purchase Order.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "PoNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 18,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PoLineItemNumber",
+					"Description": "The unique identifier of a PO line item.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "PoLineItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of products to be shipped for this line item.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DateRequired",
+					"Description": "The date that the items are required.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "DateRequired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "UnitPrice",
+					"Description": "The unit price of the product.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "UnitPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NegotiatedPrice",
+					"Description": "The negotiated price of the associated PO Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "NegotiatedPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FreightAmount",
+					"Description": "The amount of Freight costs authorized for the associated PO Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "FreightAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TaxAmount",
+					"Description": "The amount of tax costs authorized for the associated PO Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "TaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalLineItemAmount",
+					"Description": "The total value of the associated PO Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "TotalLineItemAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "QualityStandardMeasure",
+					"Description": "The specific Quality Standard parameter applied to the associated PO Line Item.\n\nExample:\n\nPPM (Part Per Million): 100 defects/rejects PPM",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "QualityStandardMeasure"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "QualityStandardId",
+					"Description": "The unique identifier of the Quality Standard.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "QualityStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "PurchaseOrderLine.cdm.json/PurchaseOrderLine",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/PurchaseOrderLine",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/PurchaseOrderLine",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoNumber\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"PoNumber\"},\"PoLineItemNumber\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"PoLineItemNumber\"},\"Quantity\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"Quantity\"},\"DateRequired\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"DateRequired\"},\"UnitPrice\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"UnitPrice\"},\"NegotiatedPrice\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"NegotiatedPrice\"},\"FreightAmount\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"FreightAmount\"},\"TaxAmount\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"TaxAmount\"},\"TotalLineItemAmount\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"TotalLineItemAmount\"},\"QualityStandardMeasure\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"QualityStandardMeasure\"},\"QualityStandardId\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"QualityStandardId\"},\"ItemSku\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"ItemSku\"},\"OrderId\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"OrderLineNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PurchaseOrderLine\",\"path\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\"},\"description\":\"The specific products, goods or services that are identified on the Purchase Order.\",\"primaryKey\":[\"PoNumber\",\"PoLineItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"PoNumber\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"PoNumber\"},\"dataType\":\"string\",\"dataTypeLength\":18},{\"type\":\"Existing\",\"name\":\"PoLineItemNumber\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"PoLineItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"DateRequired\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"DateRequired\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"UnitPrice\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"UnitPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"NegotiatedPrice\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"NegotiatedPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"FreightAmount\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"FreightAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TaxAmount\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"TaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalLineItemAmount\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"TotalLineItemAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"QualityStandardMeasure\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"QualityStandardMeasure\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"QualityStandardId\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"QualityStandardId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The specific products, goods or services that are identified on the Purchase Order.",
+			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#000B42\"}",
+			"PrimaryKeys": "PoNumber,PoLineItemNumber",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

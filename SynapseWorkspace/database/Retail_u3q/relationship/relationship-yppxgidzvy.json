@@ -1,0 +1,30 @@
+{
+	"name": "relationship-yppxgidzvy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-yppxgidzvy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderLine",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "ShipmentOrderId"
+			},
+			{
+				"FromColumnName": "OrderLineNumber",
+				"ToColumnName": "ShipmentOrderLineNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderLine.cdm.json/OrderLine\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"ShipmentOrderId\"},{\"fromAttribute\":\"OrderLineNumber\",\"toAttribute\":\"ShipmentOrderLineNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

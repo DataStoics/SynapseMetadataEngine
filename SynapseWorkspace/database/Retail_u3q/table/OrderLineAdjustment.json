@@ -1,0 +1,189 @@
+{
+	"name": "OrderLineAdjustment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "OrderLineAdjustment",
+		"Description": "An adjustment applied to an Order Line.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentId",
+					"Description": "The unique identifier of an Adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "AdjustmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineAdjustmentTimestamp",
+					"Description": "The timestamp of the associated Order Line Adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderLineAdjustmentTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineAdjustmentAmount",
+					"Description": "The amount of the order line adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderLineAdjustmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineAdjustmentQuantity",
+					"Description": "The quantity of adjustment to the Order Line.\n\nEx:\n- Return of 4 items\n- Cancellation of 5 items prior to shipment",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderLineAdjustmentQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineAdjustmentNote",
+					"Description": "A note, comment or additional information regarding an Order Line Adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderLineAdjustmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineAdjustmentReasonId",
+					"Description": "The unique identifier of an Order Line Adjustment Reason.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineAdjustment.cdm.json/OrderLineAdjustment",
+						"Name": "OrderLineAdjustmentReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineAdjustment",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineAdjustment",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineNumber\"},\"AdjustmentId\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"AdjustmentId\"},\"OrderLineAdjustmentTimestamp\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentTimestamp\"},\"OrderLineAdjustmentAmount\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentAmount\"},\"OrderLineAdjustmentQuantity\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentQuantity\"},\"OrderLineAdjustmentNote\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentNote\"},\"OrderLineAdjustmentReasonId\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentReasonId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderLineAdjustment\",\"path\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\"},\"description\":\"An adjustment applied to an Order Line.\",\"primaryKey\":[\"OrderId\",\"OrderLineNumber\",\"AdjustmentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdjustmentId\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"AdjustmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderLineAdjustmentTimestamp\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OrderLineAdjustmentAmount\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"OrderLineAdjustmentQuantity\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"OrderLineAdjustmentNote\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"OrderLineAdjustmentReasonId\",\"attributeReference\":{\"entity\":\"OrderLineAdjustment.cdm.json/OrderLineAdjustment\",\"name\":\"OrderLineAdjustmentReasonId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "An adjustment applied to an Order Line.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,OrderLineNumber,AdjustmentId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

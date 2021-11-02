@@ -1,0 +1,137 @@
+{
+	"name": "OrderLineStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "OrderLineStatus",
+		"Description": "The status of the associated Order Line.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineStatus.cdm.json/OrderLineStatus",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineStatus.cdm.json/OrderLineStatus",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineStatusStartTimestamp",
+					"Description": "The start timestamp of the order line status.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineStatus.cdm.json/OrderLineStatus",
+						"Name": "OrderLineStatusStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineStatusEndTimestamp",
+					"Description": "The end timestamp of the order line status.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineStatus.cdm.json/OrderLineStatus",
+						"Name": "OrderLineStatusEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OrderStatusTypeId",
+					"Description": "The unique identifier of an Order Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineStatus.cdm.json/OrderLineStatus",
+						"Name": "OrderStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineStatus",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderLineNumber\"},\"OrderLineStatusStartTimestamp\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderLineStatusStartTimestamp\"},\"OrderLineStatusEndTimestamp\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderLineStatusEndTimestamp\"},\"OrderStatusTypeId\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderStatusTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderLineStatus\",\"path\":\"OrderLineStatus.cdm.json/OrderLineStatus\"},\"description\":\"The status of the associated Order Line.\",\"primaryKey\":[\"OrderId\",\"OrderLineNumber\",\"OrderLineStatusStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderLineStatusStartTimestamp\",\"attributeReference\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderLineStatusStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OrderLineStatusEndTimestamp\",\"attributeReference\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderLineStatusEndTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OrderStatusTypeId\",\"attributeReference\":{\"entity\":\"OrderLineStatus.cdm.json/OrderLineStatus\",\"name\":\"OrderStatusTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The status of the associated Order Line.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,OrderLineNumber,OrderLineStatusStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

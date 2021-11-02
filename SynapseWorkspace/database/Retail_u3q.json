@@ -1,0 +1,24 @@
+{
+	"name": "Retail_u3q",
+	"properties": {
+		"Description": "",
+		"Name": "Retail_u3q",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Retail\",\"Version\":\"0.1.0\"}}}",
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

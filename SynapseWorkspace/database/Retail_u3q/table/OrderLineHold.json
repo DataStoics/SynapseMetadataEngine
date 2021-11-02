@@ -1,0 +1,170 @@
+{
+	"name": "OrderLineHold",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "OrderLineHold",
+		"Description": "A Hold placed on one or more Order Lines.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineHoldPlacedTimestamp",
+					"Description": "The timestamp that the Hold was placed.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "OrderLineHoldPlacedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineHoldReleasedTimestamp",
+					"Description": "The timestamp that the order line hold was released.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "OrderLineHoldReleasedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "HoldReasonId",
+					"Description": "The unique identifier of a Hold Reason.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "HoldReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HoldTypeId",
+					"Description": "The unique identifier of a Hold Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "HoldTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineHoldNote",
+					"Description": "A note, comment or additional information regarding the Order Line Hold.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLineHold.cdm.json/OrderLineHold",
+						"Name": "OrderLineHoldNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineHold",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/OrderLineHold",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineNumber\"},\"OrderLineHoldPlacedTimestamp\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineHoldPlacedTimestamp\"},\"OrderLineHoldReleasedTimestamp\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineHoldReleasedTimestamp\"},\"HoldReasonId\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"HoldReasonId\"},\"HoldTypeId\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"HoldTypeId\"},\"OrderLineHoldNote\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineHoldNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderLineHold\",\"path\":\"OrderLineHold.cdm.json/OrderLineHold\"},\"description\":\"A Hold placed on one or more Order Lines.\",\"primaryKey\":[\"OrderId\",\"OrderLineNumber\",\"OrderLineHoldPlacedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderLineHoldPlacedTimestamp\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineHoldPlacedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"OrderLineHoldReleasedTimestamp\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineHoldReleasedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"HoldReasonId\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"HoldReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HoldTypeId\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"HoldTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderLineHoldNote\",\"attributeReference\":{\"entity\":\"OrderLineHold.cdm.json/OrderLineHold\",\"name\":\"OrderLineHoldNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "A Hold placed on one or more Order Lines.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,OrderLineNumber,OrderLineHoldPlacedTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

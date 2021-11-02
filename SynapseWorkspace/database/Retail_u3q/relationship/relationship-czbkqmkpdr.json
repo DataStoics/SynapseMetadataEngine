@@ -1,0 +1,30 @@
+{
+	"name": "relationship-czbkqmkpdr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-czbkqmkpdr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderLine",
+		"ToTableName": "InvoiceLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "OrderId"
+			},
+			{
+				"FromColumnName": "OrderLineNumber",
+				"ToColumnName": "OrderLineNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderLine.cdm.json/OrderLine\",\"toEntity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"OrderId\"},{\"fromAttribute\":\"OrderLineNumber\",\"toAttribute\":\"OrderLineNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

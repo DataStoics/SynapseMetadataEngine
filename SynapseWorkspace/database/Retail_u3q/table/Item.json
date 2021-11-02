@@ -1,0 +1,1471 @@
+{
+	"name": "Item",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "Item",
+		"Description": "Something that is inventoried.\n\nA SKU, Stock keeping unit, refers to a specific item in a specific unit of measure.  \n\nFor example, if you distributed a specific chemical in both gallon containers and barrels then you would maintain the inventory as two SKUs even though they are both the same specific chemical.\n\nItems are classified as follows:\n\n- Tool\n- Product\n- Raw Material\n- Kit\n- Replacement Part\n- Unit\n- Miscellaneous Item",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemName",
+					"Description": "The name of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemDescription",
+					"Description": "The description of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InformationLabelText",
+					"Description": "The label text that identifies the care, use, preparation and handling of the product.\n\nExamples:\n\n- \"Keep out of direct sunlight�\"\n- \"Keep out of reach of children�\"",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "InformationLabelText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DescriptiveLabelText",
+					"Description": "The label text that describes significant characteristics and benefits.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "DescriptiveLabelText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "WarningInformationText",
+					"Description": "The text of the warning label, if any, appearing upon the product.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "WarningInformationText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GradeLabelText",
+					"Description": "The label text that identifies product quality with letters, number or conditions.\n\nExamples:\n\n-  Grade A\n-  Prime\n-  #1",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "GradeLabelText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UniversalProductCode",
+					"Description": "A system that identifies products by type and by manufacturer.  \n\nA UPC consists of twelve (12) digits.  Six (6) indicate the Manufacturer and six (6) digits describe the product.\n\nUPCs appear on product packages as bar codes, which are graphic symbols that are read by optical scanner devices.   \n\nUPCs are assigned by the Uniform Code Council of Dayton, Ohio.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "UniversalProductCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 12,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EuropeanArticleNumber",
+					"Description": "A 13 digit barcoding standard which is a superset of the original 12-digit Universal Product Code (UPC).\n\naka International Article Number (abbreviation of EAN retained)",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "EuropeanArticleNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 13,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GlobalTradeItemNumber",
+					"Description": "The Global Trade Item Number (GTIN) is an identifier for trade items that was developed by GS1.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "GlobalTradeItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 14,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemElectronicProductCode",
+					"Description": "EPC is the RFID version of the UPC barcode. \nEPC is intended to be used for specific product identification. However, EPC goes beyond UPC by not only identifying the product as an SKU, but also providing access to additional data about the origin and history of the specific units. \nThe EPC tag itself identifies the manufacturer, product, version, and serial number. It's the serial number that takes EPC to the next level. \nThis is the key to data related to specific lots/batches as well as potentially tracking the specific unit's history as it moves through the supply chain.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemElectronicProductCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 14,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartIdentifier",
+					"Description": "The Component / Part Identifier (CPID) is used to identify components or parts that are used in the assembly of a larger item. The CPID is part of the GS1 system of standards.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ComponentPartIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PluCode",
+					"Description": "PLU Codes are typically assigned to fresh produce but can also be assigned to other items as well.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "PluCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 5,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EngineeringReferenceNumber",
+					"Description": "The number used by manufacturing or engineering when referencing the Product.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "EngineeringReferenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CopyrightNumber",
+					"Description": "The number of the copyright granted.\n\nA copyright is legal protection given to a work so that it can only be published or sold by the copyright holder.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "CopyrightNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 18,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UlControlNumber",
+					"Description": "Any unit that connects to a source greater than 30 volts rms must be certified by Underwriter's Laboratories (UL) if it will be sold in the United States.\n\nThe UL control number identifies the manufacturer and certification classification.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "UlControlNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UlFileNumber",
+					"Description": "The UL file number indicates where report files can be found at Underwriters Laboratories.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "UlFileNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemNote",
+					"Description": "A note, comment or additional information regarding the item.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AssetIndicator",
+					"Description": "Indicates whether the item becomes an asset once the item is put into service.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "AssetIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ItemLength",
+					"Description": "The standard item length.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemWidth",
+					"Description": "The standard item width.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemWidth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemHeight",
+					"Description": "The standard item height.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemHeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LwhUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "LwhUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemVolume",
+					"Description": "The standard item volume.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemVolumeUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemVolumeUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemWeight",
+					"Description": "The standard item weight.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "WeightUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShelfLifeDays",
+					"Description": "The amount of time that a product can be stored before it can no longer be safely consumed or sold.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ShelfLifeDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumStorageTemperature",
+					"Description": "The minimum temperature at which the item may be stored.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MinimumStorageTemperature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumStorageTemperatureUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MinimumStorageTemperatureUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumStorageTemperature",
+					"Description": "The maximum temperature at which the item may be stored.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MaximumStorageTemperature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumStorageTemperatureUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MaximumStorageTemperatureUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumStorageHumidity",
+					"Description": "The minimum storage humidity that the item may be stored at.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MinimumStorageHumidity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumStorageHumidityUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MinimumStorageHumidityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumStorageHumidity",
+					"Description": "The maximum storage humidity that the item may be stored at.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MaximumStorageHumidity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumStorageHumidityUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MaximumStorageHumidityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StandardQuantityUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StandardQuantityUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StandardCost",
+					"Description": "The estimated or calculated cost to manufacture or produce the Product. Often used for calculating the value of the Item for inventory purposes.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StandardCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ListPrice",
+					"Description": "The standard retail price of the Product before the application of any discount.\n\nThis is the price that normally appears in catalogs, on purchase orders and invoices.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ListPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "StandardWholesalePrice",
+					"Description": "The standard, or default, price charged wholesalers for the Product.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StandardWholesalePrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TargetReturnPrice",
+					"Description": "A price established as part of a strategy to yield a specific return on investment.\n\nTarget-Return Price = (unit cost) + ((desired return)*(invested capital))/unit sales\n\nThe Target-Return Price ignores competitor's pricing and price elasticity.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "TargetReturnPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MarginAmount",
+					"Description": "The difference between the price of a product and the cost to produce it.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MarginAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VerbalBidsRequiredForMinimumAmountRange",
+					"Description": "A flag or indicator denoting the verbal bids are valid for the associated minimum/maximum quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "VerbalBidsRequiredForMinimumAmountRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VerbalBidsRequiredForMaximumAmountRange",
+					"Description": "A flag or indicator denoting the verbal bids are valid for the associated minimum/maximum quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "VerbalBidsRequiredForMaximumAmountRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WrittenBidsRequiredForMinimumAmountRange",
+					"Description": "A flag or indicator denoting the written bids are valid for the associated minimum/maximum quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "WrittenBidsRequiredForMinimumAmountRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WrittenBidsRequiredForMaximumAmountRange",
+					"Description": "A flag or indicator denoting the written bids are valid for the associated minimum/maximum quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "WrittenBidsRequiredForMaximumAmountRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CompetitiveBidsRequiredForMinimumAmountRange",
+					"Description": "A flag or indicator denoting the competitive bids are required for the associated minimum/maximum quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "CompetitiveBidsRequiredForMinimumAmountRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CompetitiveBidsRequiredForMaximumAmountRange",
+					"Description": "A flag or indicator denoting the competitive bids are required for the associated minimum/maximum quantity of Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "CompetitiveBidsRequiredForMaximumAmountRange"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LotSizeQuantity",
+					"Description": "The quantity of Item to be purchased or manufactured.  \n\nThe objective is to spread setup and ordering costs over a large number of pieces (Items) to reduce unit costs.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "LotSizeQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumOrderQuantity",
+					"Description": "The smallest order quantity which, in principle, is allowed.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MinimumOrderQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumStockQuantity",
+					"Description": "A control limit within a stock control system which could indicate the point at which an order should be placed, or indicate if stocks are too low, for a specific item.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "MinimumStockQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ActiveItemInventoryPeriodNumberOfDays",
+					"Description": "The number of days that the organization defines as the 'active item period'.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ActiveItemInventoryPeriodNumberOfDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PutAwayRulesStatement",
+					"Description": "The internal rules and procedures for positioning stock in a warehouse or store after goods inward processing.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "PutAwayRulesStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EurobrandIndicator",
+					"Description": "Indicates that the Product carries a brand name that is marketed similarly throughout Europe.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "EurobrandIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "StoreMixedIndicator",
+					"Description": "Determines whether or not the Item may be stored in a location that already contains other Items.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StoreMixedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "StoreToExistingItemIndicator",
+					"Description": "Determines whether or not the Item may be stored in a location that already contains a different lot of the same item.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StoreToExistingItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "StoreToExistingLotIndicator",
+					"Description": "Determines whether or not an Item may be stored in a location that already contains the same lot of the same Item.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StoreToExistingLotIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SoleSourceItemIndicator",
+					"Description": "Indicates that the Item is purchased from just one vendor.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "SoleSourceItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SoleSourceSupplierName",
+					"Description": "The single vendor from whom the Item is purchased.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "SoleSourceSupplierName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LifedItemIndicator",
+					"Description": "A consumable or repairable product for which the manufacturer has specified a finite life in either some form of time period or in a number of cycles or activities.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "LifedItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InStockOutOfStockIndicator",
+					"Description": "The condition existing when a supply requisition cannot be filled from stock. Stock-out Rate-The number of stock-outs per hundred line items picked.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "InStockOutOfStockIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HazardousMaterialIndicator",
+					"Description": "Any substance that has been determined by the Occupational Safety and Health Administration (OSHA) as having the potential to cause a physical or health hazard. This is based on its potential for burning, exploding, or otherwise causing an injury to workers or the likelihood that exposure will result in acute or chronic health effects among employees",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "HazardousMaterialIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ActiveInventoryItemIndicator",
+					"Description": "Any item or element of inventory which has been used or sold within a given period.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ActiveInventoryItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EligibleForExportIndicator",
+					"Description": "Indicates that the Product is eligible for export to foreign countries without restriction.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "EligibleForExportIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CoManagedInventoryItemIndicator",
+					"Description": "A support arrangement similar to Vendor Managed Inventory but where replacement orders for the vendor-owned stock are agreed by the user prior to delivery",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "CoManagedInventoryItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RotableItemIndicator",
+					"Description": "An repairable inventory item that can be repeatedly restored to a fully serviceable condition and re-used over the normal life cycle of the parent equipment to which it is related. Such items have a repair lead time as well as a procurement lead time and normally have a serial number that is retained throughout the rotable life regardless of the extent of replacement of its component parts.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "RotableItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConsignmentItemIndicator",
+					"Description": "Consignments can be used to keep track of inventory that you don't own, but at the time you sell it, you must pay for it.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ConsignmentItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SerializedItemIndicator",
+					"Description": "Indicates that the Item is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "SerializedItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TrackSerialNumberIndicator",
+					"Description": "Indicates that the Item must be tracked by Serial Number.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "TrackSerialNumberIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RepairableItemIndicator",
+					"Description": "An inventory item that is not normally consumed in use but one which will be repaired and re-used as part of the normal stock policy for that item. Such items have a repair lead-time as well as a procurement lead-time.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "RepairableItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RepairPeriod",
+					"Description": "The total out of service time, including transit time, from when a repairable component becomes unfit for use until the time it is returned to stock and is available for further use.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "RepairPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerId",
+					"Description": "The unique identifier of a Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ManufacturerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemIdentificationMethodId",
+					"Description": "The unique identifier of the Item Identification Method.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemIdentificationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommodityTypeId",
+					"Description": "The unique identifier of a Commodity Type.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "CommodityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSafetyClassificationId",
+					"Description": "The unique identifier of an Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemSafetyClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StandardStorageUnitTypeId",
+					"Description": "The unique identifier of the Standard Storage Unit Type.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "StandardStorageUnitTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SecurityLevelId",
+					"Description": "The unique identifier of the Item Security Level.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "SecurityLevelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FamilyGroupId",
+					"Description": "The unique identifier of a Family Group.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "FamilyGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HazardSeverityCategoryId",
+					"Description": "The unique identifier of a Hazard Severity Category.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "HazardSeverityCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DepreciationMethodId",
+					"Description": "The unique identifier of the Depreciation Method.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "DepreciationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemTypeId",
+					"Description": "The unique identifier of an Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "ItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BarCodeId",
+					"Description": "The unique identifier of a Bar Code.",
+					"BaseAttributeReference": {
+						"Entity": "Item.cdm.json/Item",
+						"Name": "BarCodeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/Item",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/Item",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ItemSku\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemSku\"},\"ItemName\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemName\"},\"ItemDescription\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemDescription\"},\"InformationLabelText\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"InformationLabelText\"},\"DescriptiveLabelText\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"DescriptiveLabelText\"},\"WarningInformationText\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WarningInformationText\"},\"GradeLabelText\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"GradeLabelText\"},\"UniversalProductCode\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"UniversalProductCode\"},\"EuropeanArticleNumber\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EuropeanArticleNumber\"},\"GlobalTradeItemNumber\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"GlobalTradeItemNumber\"},\"ItemElectronicProductCode\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemElectronicProductCode\"},\"ComponentPartIdentifier\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ComponentPartIdentifier\"},\"PluCode\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"PluCode\"},\"EngineeringReferenceNumber\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EngineeringReferenceNumber\"},\"CopyrightNumber\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CopyrightNumber\"},\"UlControlNumber\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"UlControlNumber\"},\"UlFileNumber\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"UlFileNumber\"},\"ItemNote\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemNote\"},\"ProductId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ProductId\"},\"AssetIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"AssetIndicator\"},\"ItemLength\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemLength\"},\"ItemWidth\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemWidth\"},\"ItemHeight\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemHeight\"},\"LwhUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"LwhUomId\"},\"ItemVolume\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemVolume\"},\"ItemVolumeUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemVolumeUomId\"},\"ItemWeight\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemWeight\"},\"WeightUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WeightUomId\"},\"ShelfLifeDays\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ShelfLifeDays\"},\"MinimumStorageTemperature\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageTemperature\"},\"MinimumStorageTemperatureUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageTemperatureUomId\"},\"MaximumStorageTemperature\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageTemperature\"},\"MaximumStorageTemperatureUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageTemperatureUomId\"},\"MinimumStorageHumidity\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageHumidity\"},\"MinimumStorageHumidityUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageHumidityUomId\"},\"MaximumStorageHumidity\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageHumidity\"},\"MaximumStorageHumidityUomId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageHumidityUomId\"},\"StandardQuantityUnitOfMeasureId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardQuantityUnitOfMeasureId\"},\"StandardCost\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardCost\"},\"ListPrice\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ListPrice\"},\"StandardWholesalePrice\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardWholesalePrice\"},\"TargetReturnPrice\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"TargetReturnPrice\"},\"MarginAmount\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MarginAmount\"},\"VerbalBidsRequiredForMinimumAmountRange\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"VerbalBidsRequiredForMinimumAmountRange\"},\"VerbalBidsRequiredForMaximumAmountRange\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"VerbalBidsRequiredForMaximumAmountRange\"},\"WrittenBidsRequiredForMinimumAmountRange\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WrittenBidsRequiredForMinimumAmountRange\"},\"WrittenBidsRequiredForMaximumAmountRange\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WrittenBidsRequiredForMaximumAmountRange\"},\"CompetitiveBidsRequiredForMinimumAmountRange\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CompetitiveBidsRequiredForMinimumAmountRange\"},\"CompetitiveBidsRequiredForMaximumAmountRange\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CompetitiveBidsRequiredForMaximumAmountRange\"},\"LotSizeQuantity\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"LotSizeQuantity\"},\"MinimumOrderQuantity\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumOrderQuantity\"},\"MinimumStockQuantity\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStockQuantity\"},\"ActiveItemInventoryPeriodNumberOfDays\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ActiveItemInventoryPeriodNumberOfDays\"},\"PutAwayRulesStatement\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"PutAwayRulesStatement\"},\"EurobrandIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EurobrandIndicator\"},\"StoreMixedIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StoreMixedIndicator\"},\"StoreToExistingItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StoreToExistingItemIndicator\"},\"StoreToExistingLotIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StoreToExistingLotIndicator\"},\"SoleSourceItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SoleSourceItemIndicator\"},\"SoleSourceSupplierName\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SoleSourceSupplierName\"},\"LifedItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"LifedItemIndicator\"},\"InStockOutOfStockIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"InStockOutOfStockIndicator\"},\"HazardousMaterialIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"HazardousMaterialIndicator\"},\"ActiveInventoryItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ActiveInventoryItemIndicator\"},\"EligibleForExportIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EligibleForExportIndicator\"},\"CoManagedInventoryItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CoManagedInventoryItemIndicator\"},\"RotableItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"RotableItemIndicator\"},\"ConsignmentItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ConsignmentItemIndicator\"},\"SerializedItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SerializedItemIndicator\"},\"TrackSerialNumberIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"TrackSerialNumberIndicator\"},\"RepairableItemIndicator\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"RepairableItemIndicator\"},\"RepairPeriod\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"RepairPeriod\"},\"ManufacturerId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ManufacturerId\"},\"ItemIdentificationMethodId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemIdentificationMethodId\"},\"CommodityTypeId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CommodityTypeId\"},\"ItemSafetyClassificationId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemSafetyClassificationId\"},\"StandardStorageUnitTypeId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardStorageUnitTypeId\"},\"SecurityLevelId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SecurityLevelId\"},\"VendorId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"VendorId\"},\"FamilyGroupId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"FamilyGroupId\"},\"HazardSeverityCategoryId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"HazardSeverityCategoryId\"},\"DepreciationMethodId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"DepreciationMethodId\"},\"ItemTypeId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemTypeId\"},\"BarCodeId\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"BarCodeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Item\",\"path\":\"Item.cdm.json/Item\"},\"description\":\"Something that is inventoried.\\n\\nA SKU, Stock keeping unit, refers to a specific item in a specific unit of measure.  \\n\\nFor example, if you distributed a specific chemical in both gallon containers and barrels then you would maintain the inventory as two SKUs even though they are both the same specific chemical.\\n\\nItems are classified as follows:\\n\\n- Tool\\n- Product\\n- Raw Material\\n- Kit\\n- Replacement Part\\n- Unit\\n- Miscellaneous Item\",\"primaryKey\":[\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"ItemName\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ItemDescription\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512},{\"type\":\"Existing\",\"name\":\"InformationLabelText\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"InformationLabelText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"DescriptiveLabelText\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"DescriptiveLabelText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"WarningInformationText\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WarningInformationText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"GradeLabelText\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"GradeLabelText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"UniversalProductCode\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"UniversalProductCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":12,\"scale\":0},{\"type\":\"Existing\",\"name\":\"EuropeanArticleNumber\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EuropeanArticleNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":13,\"scale\":0},{\"type\":\"Existing\",\"name\":\"GlobalTradeItemNumber\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"GlobalTradeItemNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":14,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ItemElectronicProductCode\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemElectronicProductCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":14,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ComponentPartIdentifier\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ComponentPartIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"PluCode\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"PluCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":5,\"scale\":0},{\"type\":\"Existing\",\"name\":\"EngineeringReferenceNumber\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EngineeringReferenceNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CopyrightNumber\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CopyrightNumber\"},\"dataType\":\"string\",\"dataTypeLength\":18},{\"type\":\"Existing\",\"name\":\"UlControlNumber\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"UlControlNumber\"},\"dataType\":\"string\",\"dataTypeLength\":4},{\"type\":\"Existing\",\"name\":\"UlFileNumber\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"UlFileNumber\"},\"dataType\":\"string\",\"dataTypeLength\":7},{\"type\":\"Existing\",\"name\":\"ItemNote\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"AssetIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"AssetIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ItemLength\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ItemWidth\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemWidth\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ItemHeight\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemHeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"LwhUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"LwhUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemVolume\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ItemVolumeUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemVolumeUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemWeight\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WeightUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShelfLifeDays\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ShelfLifeDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumStorageTemperature\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageTemperature\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumStorageTemperatureUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageTemperatureUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumStorageTemperature\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageTemperature\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumStorageTemperatureUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageTemperatureUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumStorageHumidity\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageHumidity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MinimumStorageHumidityUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStorageHumidityUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumStorageHumidity\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageHumidity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"MaximumStorageHumidityUomId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MaximumStorageHumidityUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StandardQuantityUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardQuantityUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StandardCost\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ListPrice\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ListPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"StandardWholesalePrice\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardWholesalePrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TargetReturnPrice\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"TargetReturnPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MarginAmount\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MarginAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"VerbalBidsRequiredForMinimumAmountRange\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"VerbalBidsRequiredForMinimumAmountRange\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"VerbalBidsRequiredForMaximumAmountRange\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"VerbalBidsRequiredForMaximumAmountRange\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"WrittenBidsRequiredForMinimumAmountRange\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WrittenBidsRequiredForMinimumAmountRange\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"WrittenBidsRequiredForMaximumAmountRange\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"WrittenBidsRequiredForMaximumAmountRange\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CompetitiveBidsRequiredForMinimumAmountRange\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CompetitiveBidsRequiredForMinimumAmountRange\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"CompetitiveBidsRequiredForMaximumAmountRange\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CompetitiveBidsRequiredForMaximumAmountRange\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"LotSizeQuantity\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"LotSizeQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumOrderQuantity\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumOrderQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"MinimumStockQuantity\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"MinimumStockQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ActiveItemInventoryPeriodNumberOfDays\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ActiveItemInventoryPeriodNumberOfDays\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PutAwayRulesStatement\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"PutAwayRulesStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"EurobrandIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EurobrandIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"StoreMixedIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StoreMixedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"StoreToExistingItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StoreToExistingItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"StoreToExistingLotIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StoreToExistingLotIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SoleSourceItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SoleSourceItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SoleSourceSupplierName\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SoleSourceSupplierName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"LifedItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"LifedItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"InStockOutOfStockIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"InStockOutOfStockIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"HazardousMaterialIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"HazardousMaterialIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ActiveInventoryItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ActiveInventoryItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"EligibleForExportIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"EligibleForExportIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CoManagedInventoryItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CoManagedInventoryItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RotableItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"RotableItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ConsignmentItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ConsignmentItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SerializedItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SerializedItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TrackSerialNumberIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"TrackSerialNumberIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RepairableItemIndicator\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"RepairableItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"RepairPeriod\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"RepairPeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"scale\":0},{\"type\":\"Existing\",\"name\":\"ManufacturerId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ManufacturerId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemIdentificationMethodId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemIdentificationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommodityTypeId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"CommodityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSafetyClassificationId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemSafetyClassificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"StandardStorageUnitTypeId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"StandardStorageUnitTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SecurityLevelId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"SecurityLevelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"VendorId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"VendorId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"FamilyGroupId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"FamilyGroupId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HazardSeverityCategoryId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"HazardSeverityCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DepreciationMethodId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"DepreciationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemTypeId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"ItemTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BarCodeId\",\"attributeReference\":{\"entity\":\"Item.cdm.json/Item\",\"name\":\"BarCodeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "Something that is inventoried.\n\nA SKU, Stock keeping unit, refers to a specific item in a specific unit of measure.  \n\nFor example, if you distributed a specific chemical in both gallon containers and barrels then you would maintain the inventory as two SKUs even though they are both the same specific chemical.\n\nItems are classified as follows:\n\n- Tool\n- Product\n- Raw Material\n- Kit\n- Replacement Part\n- Unit\n- Miscellaneous Item",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "ItemSku",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

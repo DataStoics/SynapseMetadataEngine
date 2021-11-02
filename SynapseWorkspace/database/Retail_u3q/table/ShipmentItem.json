@@ -1,0 +1,1334 @@
+{
+	"name": "ShipmentItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "ShipmentItem",
+		"Description": "The lines on a shipment each consisting of one item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNumber",
+					"Description": "The shipment line number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ShipmentItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PackingInstructions",
+					"Description": "Packing instructions for the associated shipped item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PackingInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HandlingInstructions",
+					"Description": "Written instructions provided by the shipper/manufacturer and designed to\nensure proper handling of the cargo. This can be in the form of marks (see Cautionary Markings) on the cargo or packaging itself or in a separate document such as the bill of lading.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "HandlingInstructions"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CountryOfManufactureName",
+					"Description": "The country of manufacture of the item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "CountryOfManufactureName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippedItemQuantity",
+					"Description": "The quantity of items shipped.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ShippedItemQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemId",
+					"Description": "The unique identifier that identifies the Transaction Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TransactionLineItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemNetWeight",
+					"Description": "The weight of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ItemNetWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemLength",
+					"Description": "The length of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ItemLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemWidth",
+					"Description": "The width of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ItemWidth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemHeight",
+					"Description": "The height of the Item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ItemHeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LengthWidthHeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "LengthWidthHeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Volume",
+					"Description": "The volume of the shipment item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "Volume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PerItemWeight",
+					"Description": "The individual or per item weight of an item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerItemWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalQuantityItemWeight",
+					"Description": "The total weight of all the items without additional packaging weights added.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TotalQuantityItemWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PerItemPackagedWeight",
+					"Description": "The weight of each item packaged for shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerItemPackagedWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalQuantityPackagedWeight",
+					"Description": "The total weight of all items packaged for shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TotalQuantityPackagedWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PerItemDimensionalWeight",
+					"Description": "The per item dimensional weight, which is the conversion of the cubic space of a shipment into pounds. Commonly referred to as dim weight. The international term is volume weight.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerItemDimensionalWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalQuantityDimensionalWeight",
+					"Description": "The dimensional weight of all items, which is the conversion of the cubic space of a shipment into pounds. Commonly referred to as dim weight. T",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TotalQuantityDimensionalWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ActualGrossShipmentWeight",
+					"Description": "The weight of the shipment including all packing, blocking, platforms, special bracing, etc., if required. (includes weight of unit load device, when applicable.)",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ActualGrossShipmentWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalItemChargeableWeight",
+					"Description": "The weight of the shipment used in determining airfreight charges. The chargeable weight may be the dimensional weight, or on container shipments, the gross weight of the shipment less the tare weight of the container.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TotalItemChargeableWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalItemsDensity",
+					"Description": "Density is weight per unit of volume. Density is computer by dividing a shipments weight by its cubic volume. Generally expressed in pounds per cubic foot in the U.S.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TotalItemsDensity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalItemsDimensionalWeight",
+					"Description": "A computed weight based on a minimum density requirement. It is used to determine the freight charges for low dense shipments. It is computed by dividing the shipment volume by the minimum density requirement. The Dimensional Weight Rule was developed to insure fair compensation for low-density shipments. When a given shipment falls below the minimum density requirement, dimensional weight rather than actual weight is used to calculate the transportation charged. Minimum density requirements vary from carrier to carrier. Some carriers give discounts for shipments of high-density goods.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TotalItemsDimensionalWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentItemNetWeight",
+					"Description": "Weight of the goods alone without any immediate wrappings, e.g., the weight of the contents of a tin can without the weight of the can.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ShipmentItemNetWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PerUnitDeclaredValueForCarriageAmount",
+					"Description": "The value of goods declared to the carrier by the shipper for the purposes of determining charges of or establishing the limit of the carrier's liability for loss, damage, or delay.  See Valuation Charges.\n\nThe value of goods declared to the carrier by the shipper for the purposes of determining charges or establishing the limit of the carrier's liability for loss, damage, or delay.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerUnitDeclaredValueForCarriageAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PerUnitDeclaredValueForCustomsAmount",
+					"Description": "Declared Value for Customs    The selling price of the contents or the replacement cost if the contents are not for resale.  The amount mush be equal to or greater than the declared value.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerUnitDeclaredValueForCustomsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SpecialHandlingStatement",
+					"Description": "A statement regarding any special handling requirements.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "SpecialHandlingStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EstimatedValue",
+					"Description": "The estimated value of the shipment item(s).",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "EstimatedValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WarningInformationText",
+					"Description": "The text of the warning label, if any, appearing upon the shipment item.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "WarningInformationText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AwkwardCargoIndicator",
+					"Description": "Cargo of irregular size that can either be containerized (packed in container) or non-containerized (without equipment associated with) during transportation. It requires prior approval on a case by case basis before confirmation of booking.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "AwkwardCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BreakBulkCargoIndicator",
+					"Description": "Goods shipped loose in the vessel's hold and not in a container.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "BreakBulkCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PerishableCargoIndicator",
+					"Description": "Cargo subject to decay or deterioration.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerishableCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BreakBulkItemIndicator",
+					"Description": "Cargo which is not containerized due to its weight and/or size e.g. steel pipes, boats etc.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "BreakBulkItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DangerousGoodsIndicator",
+					"Description": "Items capable of presenting a risk to the health or safety of people or property when shipped.\n\nThe term used by I.M.C.O. for hazardous materials which are capable of posing a significant risk to health, safety or property while being transported.\n\nThe United Nation's official term for Hazardous Materials.  Articles or substances which are capable of posing a significant risk to the health or safety of the general public when transported by air and which are classified according to the most current editions of the ICAO Technical Instructions for the Safe Transport of Dangerous Goods by Air and the IATA Dangerous Goods Regulations.  See Hazardous Materials.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "DangerousGoodsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HazardousMaterialHazmatIndicator",
+					"Description": "Hazardous materials (Hazmat)    The U.S. Government's official term for Dangerous Goods.  Items of freight that are inherently harmful and classified under Title 49, Code of Federal Regulations (CFR).  Hazardous Materials may only be transported under certain conditions relative to packaging, quantity carried, airplane type, location on board the airplane, etc., and in conformance with applicable rules.  Also see Dangerous Goods.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "HazardousMaterialHazmatIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OversizedCargoIndicator",
+					"Description": "Unusually large or heavy cargo that will not fit in the cargo areas of standard-body freighters or passenger airplanes.  Cargo the exceeds the standard dimensions of common ULDs",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "OversizedCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BulkCargoIndicator",
+					"Description": "Loose cargo, not unitized, not loaded in containers or on pallets.\n\nAir Cargo:  Cargo loaded as loose pieces into airplane compartments.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "BulkCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ArticlesOfExtraordinaryValueIndicator",
+					"Description": "Commodities identified as high value items.\n\nCommodities identified as high-value items that require advance arrangements and special handling.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ArticlesOfExtraordinaryValueIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AttractiveMerchandiseIndicator",
+					"Description": "Commodities such as cameras, radios, electronic equipment, etc., that are handled as high-value shipments but not rated the same.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "AttractiveMerchandiseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PerishableItemIndicator",
+					"Description": "A commodity possessing a quality or condition making it conducive to deterioration, spoilage, or death. Examples of this are seafood, flowers, fruits, vegetables and other perishable foodstuff.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PerishableItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SerializedItemIndicator",
+					"Description": "Indicates that the Item is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "SerializedItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TrackSerialNumberIndicator",
+					"Description": "Indicates that the Item must be tracked by Serial Number.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "TrackSerialNumberIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HoldForPickUpAtDestinationIndicator",
+					"Description": "Freight to be held at the carrier's destination location for pick-up by the recipient. See also Notify on Arrival.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "HoldForPickUpAtDestinationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CyCfsCargoIndicator",
+					"Description": "Cargo loaded in a full container by a shipper at origin, delivered to pier facility at destination, and then devanned by the carrier for loose pick up.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "CyCfsCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CyCyCargoIndicator",
+					"Description": "Cargo loaded by the shipper in a full container at origin and delivered to the carrier's terminal at destination for pick up intact by consignee.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "CyCyCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DryCargoIndicator",
+					"Description": "Cargo that does not require temperature control.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "DryCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PersonalEffectivesItemsIndicator",
+					"Description": "Shipments of used personal goods not for resale.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PersonalEffectivesItemsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BondedFreightIndicator",
+					"Description": "Freight moving under a bond to U.S. Customs or to the Internal Revenue Service, and to be delivered only under stated conditions.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "BondedFreightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BulkCargoShipmentItemIndicator",
+					"Description": "Not in packages or containers; shipped loose in the hold of a ship without mark and count.\" Grain, coal and sulfur are usually bulk freight.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "BulkCargoShipmentItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ControlledAtmosphereRequiredIndicator",
+					"Description": "An atmosphere in which oxygen, carbon dioxide and nitrogen concentrations are regulated, as well as temperature and humidity.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ControlledAtmosphereRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContainerizableCargoIndicator",
+					"Description": "Cargo that will fit into a container and result in an economical shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ContainerizableCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DangerousAndHazardousCargoIndicator",
+					"Description": "Abbreviation for \"Dangerous and Hazardous\" cargo.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "DangerousAndHazardousCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LoosePackingShipmentItemIndicator",
+					"Description": "Without packing.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "LoosePackingShipmentItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OverheightCargoIndicator",
+					"Description": "Cargo more than eight feet high which thus cannot fit into a standard container.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "OverheightCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LooseCargoIndicator",
+					"Description": "Air cargo delivered to an airline as separate packages and loaded and unloaded onto airplanes (or ULDs) by airline employees, and then delivered as separate pieces to the consigned.  See Bulk Cargo.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "LooseCargoIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BandedPackingIndicator",
+					"Description": "Cargo wrapped and/or secured with metal or plastic strips",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "BandedPackingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GuaranteedFreightIndicator",
+					"Description": "Freight charges which are not paid to the carrier in advance of shipment but which the shipper promises to pay within a specified period of time. Guaranteed freight is considered earned by the carrier at the time of shipment and must be paid even if the cargo is undelivered or delivered damaged. Guaranteed freight is not refundable by the carrier even if they do not deliver the cargo except through subrogation proceedings.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "GuaranteedFreightIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ItemSafetyClassificationId",
+					"Description": "The unique identifier of an Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ItemSafetyClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IdentificationMethodId",
+					"Description": "The unique identifier of the Identification Method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "IdentificationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FreightConditionId",
+					"Description": "The unique identifier of an descriptive Freight Condition.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "FreightConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HazardSeverityCategoryId",
+					"Description": "The unique identifier of a Hazard Severity Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "HazardSeverityCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CommodityTypeId",
+					"Description": "The unique identifier of a Commodity Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "CommodityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HtsScheduleBCode",
+					"Description": "The unique code identifying items within the HTS Schedule B.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "HtsScheduleBCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HarmonizedTariffScheduleCode",
+					"Description": "The unique identifier of an HTS Code.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "HarmonizedTariffScheduleCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EccnNumber",
+					"Description": "The unique identifier of a ECCN.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "EccnNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CargoTypeId",
+					"Description": "The unique identifier of a Cargo Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "CargoTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LandedCost",
+					"Description": "The total cost of the item once it has arrived at the buyer's door.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "LandedCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PalletTypeId",
+					"Description": "The unique identifier of a Pallet Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PalletTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PalletSerialNumber",
+					"Description": "The serial number of the Pallet.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "PalletSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncotermId",
+					"Description": "The unique identifier of a Incoterm.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "IncotermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContainerId",
+					"Description": "The unique identifier of the container.\n\nThis would be the 'serial number' of the container if it is serialized.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentItem.cdm.json/ShipmentItem",
+						"Name": "ContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/ShipmentItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/ShipmentItem",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShipmentId\"},\"ShipmentItemNumber\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShipmentItemNumber\"},\"PackingInstructions\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PackingInstructions\"},\"HandlingInstructions\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HandlingInstructions\"},\"CountryOfManufactureName\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CountryOfManufactureName\"},\"ShippedItemQuantity\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShippedItemQuantity\"},\"OrderId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OrderLineNumber\"},\"TransactionId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TransactionId\"},\"TransactionLineItemId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TransactionLineItemId\"},\"ItemNetWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemNetWeight\"},\"WeightUnitOfMeasureId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"WeightUnitOfMeasureId\"},\"ItemLength\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemLength\"},\"ItemWidth\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemWidth\"},\"ItemHeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemHeight\"},\"LengthWidthHeightUnitOfMeasureId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LengthWidthHeightUnitOfMeasureId\"},\"Volume\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"Volume\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"VolumeUnitOfMeasureId\"},\"PerItemWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerItemWeight\"},\"TotalQuantityItemWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalQuantityItemWeight\"},\"PerItemPackagedWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerItemPackagedWeight\"},\"TotalQuantityPackagedWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalQuantityPackagedWeight\"},\"PerItemDimensionalWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerItemDimensionalWeight\"},\"TotalQuantityDimensionalWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalQuantityDimensionalWeight\"},\"ActualGrossShipmentWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ActualGrossShipmentWeight\"},\"TotalItemChargeableWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalItemChargeableWeight\"},\"TotalItemsDensity\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalItemsDensity\"},\"TotalItemsDimensionalWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalItemsDimensionalWeight\"},\"ShipmentItemNetWeight\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShipmentItemNetWeight\"},\"PerUnitDeclaredValueForCarriageAmount\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerUnitDeclaredValueForCarriageAmount\"},\"PerUnitDeclaredValueForCustomsAmount\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerUnitDeclaredValueForCustomsAmount\"},\"SpecialHandlingStatement\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"SpecialHandlingStatement\"},\"EstimatedValue\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"EstimatedValue\"},\"WarningInformationText\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"WarningInformationText\"},\"AwkwardCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"AwkwardCargoIndicator\"},\"BreakBulkCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BreakBulkCargoIndicator\"},\"PerishableCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerishableCargoIndicator\"},\"BreakBulkItemIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BreakBulkItemIndicator\"},\"DangerousGoodsIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"DangerousGoodsIndicator\"},\"HazardousMaterialHazmatIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HazardousMaterialHazmatIndicator\"},\"OversizedCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OversizedCargoIndicator\"},\"BulkCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BulkCargoIndicator\"},\"ArticlesOfExtraordinaryValueIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ArticlesOfExtraordinaryValueIndicator\"},\"AttractiveMerchandiseIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"AttractiveMerchandiseIndicator\"},\"PerishableItemIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerishableItemIndicator\"},\"SerializedItemIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"SerializedItemIndicator\"},\"TrackSerialNumberIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TrackSerialNumberIndicator\"},\"HoldForPickUpAtDestinationIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HoldForPickUpAtDestinationIndicator\"},\"CyCfsCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CyCfsCargoIndicator\"},\"CyCyCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CyCyCargoIndicator\"},\"DryCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"DryCargoIndicator\"},\"PersonalEffectivesItemsIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PersonalEffectivesItemsIndicator\"},\"BondedFreightIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BondedFreightIndicator\"},\"BulkCargoShipmentItemIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BulkCargoShipmentItemIndicator\"},\"ControlledAtmosphereRequiredIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ControlledAtmosphereRequiredIndicator\"},\"ContainerizableCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ContainerizableCargoIndicator\"},\"DangerousAndHazardousCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"DangerousAndHazardousCargoIndicator\"},\"LoosePackingShipmentItemIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LoosePackingShipmentItemIndicator\"},\"OverheightCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OverheightCargoIndicator\"},\"LooseCargoIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LooseCargoIndicator\"},\"BandedPackingIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BandedPackingIndicator\"},\"GuaranteedFreightIndicator\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"GuaranteedFreightIndicator\"},\"ItemSafetyClassificationId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemSafetyClassificationId\"},\"IdentificationMethodId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"IdentificationMethodId\"},\"FreightConditionId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"FreightConditionId\"},\"HazardSeverityCategoryId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HazardSeverityCategoryId\"},\"CommodityTypeId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CommodityTypeId\"},\"HtsScheduleBCode\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HtsScheduleBCode\"},\"HarmonizedTariffScheduleCode\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HarmonizedTariffScheduleCode\"},\"EccnNumber\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"EccnNumber\"},\"ItemSku\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemSku\"},\"CargoTypeId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CargoTypeId\"},\"LandedCost\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LandedCost\"},\"PalletTypeId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PalletTypeId\"},\"PalletSerialNumber\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PalletSerialNumber\"},\"IncotermId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"IncotermId\"},\"ContainerId\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ContainerId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentItem\",\"path\":\"ShipmentItem.cdm.json/ShipmentItem\"},\"description\":\"The lines on a shipment each consisting of one item.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentItemNumber\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShipmentItemNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PackingInstructions\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PackingInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"HandlingInstructions\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HandlingInstructions\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"CountryOfManufactureName\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CountryOfManufactureName\"},\"dataType\":\"string\",\"dataTypeLength\":128},{\"type\":\"Existing\",\"name\":\"ShippedItemQuantity\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShippedItemQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TransactionLineItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemNetWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemNetWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemLength\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ItemWidth\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemWidth\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ItemHeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemHeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"LengthWidthHeightUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LengthWidthHeightUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Volume\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"Volume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"VolumeUnitOfMeasureId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PerItemWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerItemWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalQuantityItemWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalQuantityItemWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PerItemPackagedWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerItemPackagedWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalQuantityPackagedWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalQuantityPackagedWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PerItemDimensionalWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerItemDimensionalWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalQuantityDimensionalWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalQuantityDimensionalWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ActualGrossShipmentWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ActualGrossShipmentWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalItemChargeableWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalItemChargeableWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalItemsDensity\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalItemsDensity\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TotalItemsDimensionalWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TotalItemsDimensionalWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ShipmentItemNetWeight\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ShipmentItemNetWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"PerUnitDeclaredValueForCarriageAmount\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerUnitDeclaredValueForCarriageAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PerUnitDeclaredValueForCustomsAmount\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerUnitDeclaredValueForCustomsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SpecialHandlingStatement\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"SpecialHandlingStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048},{\"type\":\"Existing\",\"name\":\"EstimatedValue\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"EstimatedValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"WarningInformationText\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"WarningInformationText\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"AwkwardCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"AwkwardCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BreakBulkCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BreakBulkCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PerishableCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerishableCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BreakBulkItemIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BreakBulkItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DangerousGoodsIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"DangerousGoodsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"HazardousMaterialHazmatIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HazardousMaterialHazmatIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OversizedCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OversizedCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BulkCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BulkCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ArticlesOfExtraordinaryValueIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ArticlesOfExtraordinaryValueIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"AttractiveMerchandiseIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"AttractiveMerchandiseIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PerishableItemIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PerishableItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"SerializedItemIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"SerializedItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TrackSerialNumberIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"TrackSerialNumberIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"HoldForPickUpAtDestinationIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HoldForPickUpAtDestinationIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CyCfsCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CyCfsCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"CyCyCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CyCyCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DryCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"DryCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PersonalEffectivesItemsIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PersonalEffectivesItemsIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BondedFreightIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BondedFreightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BulkCargoShipmentItemIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BulkCargoShipmentItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ControlledAtmosphereRequiredIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ControlledAtmosphereRequiredIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ContainerizableCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ContainerizableCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"DangerousAndHazardousCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"DangerousAndHazardousCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LoosePackingShipmentItemIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LoosePackingShipmentItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"OverheightCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"OverheightCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"LooseCargoIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LooseCargoIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"BandedPackingIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"BandedPackingIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"GuaranteedFreightIndicator\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"GuaranteedFreightIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ItemSafetyClassificationId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemSafetyClassificationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IdentificationMethodId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"IdentificationMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FreightConditionId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"FreightConditionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HazardSeverityCategoryId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HazardSeverityCategoryId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CommodityTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CommodityTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HtsScheduleBCode\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HtsScheduleBCode\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"HarmonizedTariffScheduleCode\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"HarmonizedTariffScheduleCode\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"EccnNumber\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"EccnNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"CargoTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"CargoTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"LandedCost\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"LandedCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PalletTypeId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PalletTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PalletSerialNumber\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"PalletSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30},{\"type\":\"Existing\",\"name\":\"IncotermId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"IncotermId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ContainerId\",\"attributeReference\":{\"entity\":\"ShipmentItem.cdm.json/ShipmentItem\",\"name\":\"ContainerId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The lines on a shipment each consisting of one item.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentItemNumber",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

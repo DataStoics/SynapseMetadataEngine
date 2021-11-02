@@ -1,0 +1,30 @@
+{
+	"name": "relationship-sbicgdbhel",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "relationship-sbicgdbhel",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderLine",
+		"ToTableName": "PickListItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "OrderId"
+			},
+			{
+				"FromColumnName": "OrderLineNumber",
+				"ToColumnName": "OrderLineNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderLine.cdm.json/OrderLine\",\"toEntity\":\"PickListItem.cdm.json/PickListItem\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"OrderId\"},{\"fromAttribute\":\"OrderLineNumber\",\"toAttribute\":\"OrderLineNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

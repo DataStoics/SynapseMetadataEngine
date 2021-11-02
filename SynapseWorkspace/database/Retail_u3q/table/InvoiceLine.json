@@ -1,0 +1,326 @@
+{
+	"name": "InvoiceLine",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "InvoiceLine",
+		"Description": "A component of the invoice that details specific products, quantities and values invoiced.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InvoiceId",
+					"Description": "The unique identifier of an Invoice.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "InvoiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineNumber",
+					"Description": "The unique identifier of an Invoice Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "InvoiceLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of Products to be invoiced by the invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitPriceAmount",
+					"Description": "The list unit price of the invoiced line item products.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "UnitPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SalesPriceAmount",
+					"Description": "The actual price invoice for the Product(s), which may differ from the list price.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "SalesPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineItemNote",
+					"Description": "A note, comment or additional information regarding the invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "InvoiceLineItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalProductInvoiceAmount",
+					"Description": "The total amount of product invoiced on the invoice line.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "TotalProductInvoiceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeId",
+					"Description": "The unique identifier of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "ChargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineChargeAmount",
+					"Description": "The amount of the charge invoiced on the invoice line.\n\nNote:\nOne or more adjustments may be invoiced on the same invoice line (see INVOICE LINE ADJUSTMENT).     However, each Charge is invoiced as a single invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "InvoiceLineChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineAdjustmentsAmount",
+					"Description": "The amount of adjustment(s) invoiced on the invoice line.\n\nNote:\nOne or more adjustments may be invoiced on the same invoice line (see INVOICE LINE ADJUSTMENT).     However, each Charge is invoiced as a single invoice line item.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "InvoiceLineAdjustmentsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceLineTypeId",
+					"Description": "The unique identifier of an Invoice Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "InvoiceLine.cdm.json/InvoiceLine",
+						"Name": "InvoiceLineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/InvoiceLine",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/InvoiceLine",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InvoiceId\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceId\"},\"InvoiceLineNumber\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineNumber\"},\"Quantity\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"Quantity\"},\"UnitPriceAmount\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"UnitPriceAmount\"},\"SalesPriceAmount\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"SalesPriceAmount\"},\"InvoiceLineItemNote\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineItemNote\"},\"ProductId\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"ProductId\"},\"ItemSku\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"ItemSku\"},\"TotalProductInvoiceAmount\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"TotalProductInvoiceAmount\"},\"ChargeId\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"ChargeId\"},\"InvoiceLineChargeAmount\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineChargeAmount\"},\"InvoiceLineAdjustmentsAmount\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineAdjustmentsAmount\"},\"OrderId\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"OrderLineNumber\"},\"IsoCurrencyCode\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"IsoCurrencyCode\"},\"InvoiceLineTypeId\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InvoiceLine\",\"path\":\"InvoiceLine.cdm.json/InvoiceLine\"},\"description\":\"A component of the invoice that details specific products, quantities and values invoiced.\",\"primaryKey\":[\"InvoiceId\",\"InvoiceLineNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"InvoiceId\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InvoiceLineNumber\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"UnitPriceAmount\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"UnitPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"SalesPriceAmount\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"SalesPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InvoiceLineItemNote\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"TotalProductInvoiceAmount\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"TotalProductInvoiceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ChargeId\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"ChargeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"InvoiceLineChargeAmount\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"InvoiceLineAdjustmentsAmount\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineAdjustmentsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"InvoiceLineTypeId\",\"attributeReference\":{\"entity\":\"InvoiceLine.cdm.json/InvoiceLine\",\"name\":\"InvoiceLineTypeId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "A component of the invoice that details specific products, quantities and values invoiced.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "InvoiceId,InvoiceLineNumber",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

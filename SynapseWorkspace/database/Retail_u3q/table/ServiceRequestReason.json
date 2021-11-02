@@ -1,0 +1,474 @@
+{
+	"name": "ServiceRequestReason",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Retail_u3q"
+		},
+		"Name": "ServiceRequestReason",
+		"Description": "A request for services made by a party.\n\nA Service Request may be addressed immediately or require additional activity(s) or Service Request Activity(s).\n\nBoth Service Request(s) and Service Request Activity(s) involve one or more parties of various types and responsibilities and may incur costs that are charged internally or to the party.\n\nA Service Request may be raised to an Issue if it can not be resolved or required higher visibility.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceRequestId",
+					"Description": "The unique identifier of a Service Request.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ServiceRequestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestReasonId",
+					"Description": "The unique identifier of a Service Request Reason.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ServiceRequestReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceRequestReasonNote",
+					"Description": "A note, comment or additional information regarding the service request reason.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ServiceRequestReasonNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventTypeId",
+					"Description": "The unique identifier of a Customer Account Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "CustomerAccountEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventTimestamp",
+					"Description": "The timestamp of the customer account event.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "CustomerAccountEventTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MarketingProgramId",
+					"Description": "The unique identifier of a Marketing Program.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "MarketingProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProgramParticipationStatusId",
+					"Description": "The unique identifier of a Program Participation Status.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ProgramParticipationStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountProgramStartDate",
+					"Description": "The start date of the Customer Account's participation in a Program.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "CustomerAccountProgramStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemId",
+					"Description": "The unique identifier that identifies the Transaction Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "TransactionLineItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentId",
+					"Description": "The unique identifier of a Payment.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "PaymentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "OrderLineNumber",
+					"Description": "The number that identifies the Order Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "OrderLineNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MarketingEventId",
+					"Description": "The unique identifier of a Marketing Event.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "MarketingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketingCampaignId",
+					"Description": "The unique identifier of a Marketing Campaign.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "MarketingCampaignId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingEventId",
+					"Description": "The unique identifier of an Advertising Event.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "AdvertisingEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdvertisingCampaignId",
+					"Description": "The unique identifier of an Advertising Campaign.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "AdvertisingCampaignId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrganizationId",
+					"Description": "The unique identifier of an organization.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "OrganizationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessProcessId",
+					"Description": "The unique identifier of a Business Process.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "BusinessProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceRequestReason.cdm.json/ServiceRequestReason",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/ServiceRequestReason",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://rpsynapsewsdi01@rpadfmetadata.dfs.core.windows.net/Retail_u3q/ServiceRequestReason",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceRequestId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ServiceRequestId\"},\"ServiceRequestReasonId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ServiceRequestReasonId\"},\"ServiceRequestReasonNote\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ServiceRequestReasonNote\"},\"CustomerId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerId\"},\"CustomerAccountId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountId\"},\"CustomerAccountEventTypeId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountEventTypeId\"},\"CustomerAccountEventTimestamp\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountEventTimestamp\"},\"DocumentId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"DocumentId\"},\"MarketingProgramId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"MarketingProgramId\"},\"ProgramParticipationStatusId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ProgramParticipationStatusId\"},\"CustomerAccountProgramStartDate\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountProgramStartDate\"},\"TransactionId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"TransactionId\"},\"TransactionLineItemId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"TransactionLineItemId\"},\"PaymentId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"PaymentId\"},\"OrderId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"OrderLineNumber\"},\"ShipmentId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ShipmentId\"},\"ChannelId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ChannelId\"},\"ProductId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ProductId\"},\"MarketingEventId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"MarketingEventId\"},\"MarketingCampaignId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"MarketingCampaignId\"},\"AdvertisingEventId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"AdvertisingEventId\"},\"AdvertisingCampaignId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"AdvertisingCampaignId\"},\"OrganizationId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"OrganizationId\"},\"BusinessProcessId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"BusinessProcessId\"},\"PartyId\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceRequestReason\",\"path\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\"},\"description\":\"A request for services made by a party.\\n\\nA Service Request may be addressed immediately or require additional activity(s) or Service Request Activity(s).\\n\\nBoth Service Request(s) and Service Request Activity(s) involve one or more parties of various types and responsibilities and may incur costs that are charged internally or to the party.\\n\\nA Service Request may be raised to an Issue if it can not be resolved or required higher visibility.\",\"primaryKey\":[\"ServiceRequestId\",\"ServiceRequestReasonId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ServiceRequestId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ServiceRequestId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestReasonId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ServiceRequestReasonId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ServiceRequestReasonNote\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ServiceRequestReasonNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"CustomerId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountEventTypeId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountEventTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountEventTimestamp\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountEventTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DocumentId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"DocumentId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MarketingProgramId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"MarketingProgramId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProgramParticipationStatusId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ProgramParticipationStatusId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"CustomerAccountProgramStartDate\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"CustomerAccountProgramStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\"},{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"TransactionLineItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PaymentId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"PaymentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrderId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"OrderId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"OrderLineNumber\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"OrderLineNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ChannelId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"MarketingEventId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"MarketingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MarketingCampaignId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"MarketingCampaignId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingEventId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"AdvertisingEventId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AdvertisingCampaignId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"AdvertisingCampaignId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"OrganizationId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"OrganizationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BusinessProcessId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"BusinessProcessId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PartyId\",\"attributeReference\":{\"entity\":\"ServiceRequestReason.cdm.json/ServiceRequestReason\",\"name\":\"PartyId\"},\"dataType\":\"long\"}]}}}",
+			"Description": "A request for services made by a party.\n\nA Service Request may be addressed immediately or require additional activity(s) or Service Request Activity(s).\n\nBoth Service Request(s) and Service Request Activity(s) involve one or more parties of various types and responsibilities and may incur costs that are charged internally or to the party.\n\nA Service Request may be raised to an Issue if it can not be resolved or required higher visibility.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "ServiceRequestId,ServiceRequestReasonId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
