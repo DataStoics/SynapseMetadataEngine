@@ -1,0 +1,23 @@
+{
+	"name": "relationship-swefggmmyg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-swefggmmyg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_SalesOrderHeader",
+		"ToTableName": "r_SalesLT_Address",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillToAddressID",
+				"ToColumnName": "AddressID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

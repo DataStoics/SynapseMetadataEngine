@@ -1,0 +1,23 @@
+{
+	"name": "relationship-hxqohwtair",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-hxqohwtair",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_SalesOrderHeader",
+		"ToTableName": "r_SalesLT_Address",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipToAddressID",
+				"ToColumnName": "AddressID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

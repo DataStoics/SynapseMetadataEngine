@@ -1,0 +1,23 @@
+{
+	"name": "relationship-xtordtpcym",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-xtordtpcym",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_CustomerAddress",
+		"ToTableName": "r_SalesLT_Address",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AddressID",
+				"ToColumnName": "AddressID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

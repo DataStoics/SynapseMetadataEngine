@@ -1,0 +1,23 @@
+{
+	"name": "relationship-sjudxhxxjr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-sjudxhxxjr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_SalesOrderDetail",
+		"ToTableName": "r_SalesLT_SalesOrderHeader",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SalesOrderID",
+				"ToColumnName": "SalesOrderID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,23 @@
+{
+	"name": "relationship-bpfyvlpstf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-bpfyvlpstf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_SalesOrderDetail",
+		"ToTableName": "r_SalesLT_Product",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductID",
+				"ToColumnName": "ProductID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

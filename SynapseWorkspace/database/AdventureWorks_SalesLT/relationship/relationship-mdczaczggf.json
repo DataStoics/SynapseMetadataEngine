@@ -1,0 +1,23 @@
+{
+	"name": "relationship-mdczaczggf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-mdczaczggf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_Product",
+		"ToTableName": "r_SalesLT_ProductModel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductModelID",
+				"ToColumnName": "ProductModelID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

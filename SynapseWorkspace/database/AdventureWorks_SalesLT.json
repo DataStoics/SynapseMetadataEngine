@@ -1,0 +1,22 @@
+{
+	"name": "AdventureWorks_SalesLT",
+	"properties": {
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Name": "AdventureWorks_SalesLT",
+		"EntityType": "DATABASE",
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://raw@rpadfmetadata.dfs.core.windows.net/global/asql/saleslt",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

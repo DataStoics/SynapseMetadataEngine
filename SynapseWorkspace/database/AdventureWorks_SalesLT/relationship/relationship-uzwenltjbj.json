@@ -1,0 +1,23 @@
+{
+	"name": "relationship-uzwenltjbj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-uzwenltjbj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_SalesOrderHeader",
+		"ToTableName": "r_SalesLT_Customer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerID",
+				"ToColumnName": "CustomerID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,23 @@
+{
+	"name": "relationship-efjmxduvpv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-efjmxduvpv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_ProductModelProductDescription",
+		"ToTableName": "r_SalesLT_ProductDescription",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductDescriptionID",
+				"ToColumnName": "ProductDescriptionID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

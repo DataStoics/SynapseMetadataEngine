@@ -1,0 +1,23 @@
+{
+	"name": "relationship-wkceeukvkw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "AdventureWorks_SalesLT"
+		},
+		"Name": "relationship-wkceeukvkw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "r_SalesLT_ProductModelProductDescription",
+		"ToTableName": "r_SalesLT_ProductModel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductModelID",
+				"ToColumnName": "ProductModelID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}
