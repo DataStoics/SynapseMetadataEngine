@@ -1,0 +1,1346 @@
+{
+	"name": "TransactionLineItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "RawAdventureWorks"
+		},
+		"Name": "TransactionLineItem",
+		"Description": "The components of an Transaction broken down by Product and Quantity, one per line item.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemId",
+					"Description": "The unique identifier that identifies the Transaction Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemStartTimestamp",
+					"Description": "The timestamp the transaction line item was started.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineItemStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemCompletedTimestamp",
+					"Description": "The timestamp that the transaction line item was completed or closed.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineItemCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UniversalProductCode",
+					"Description": "A system that identifies products by type and by manufacturer.  \n\nA UPC consists of eleven (11) digits.  Six (6) indicate the Manufacturer and five (5) digits describe the product.\n\nUPCs appear on product packages as bar codes, which are graphic symbols that are read by optical scanner devices.   \n\nUPCs are assigned by the Uniform Code Council of Dayton, Ohio.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "UniversalProductCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 12,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of Product ordered on the transaction line item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PreorderIndicator",
+					"Description": "The quantity of Line Items returned.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PreorderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ProductListPriceAmount",
+					"Description": "The current per unit list price of the Transaction Line Item products.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ProductListPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionProductPriceAmount",
+					"Description": "The price of the product as applicable to the Transaction Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionProductPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FreeSampleIndicator",
+					"Description": "Indicates that product was provided as a free sample.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "FreeSampleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionLineItemAmount",
+					"Description": "The total amount of line item charges related to the quantity of products sold at the actual selling price less rebates and discounts.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TotalTransactionLineItemAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionSalesPriceAmount",
+					"Description": "The total amount of line item charges including all rebates and discount and taxes.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TotalTransactionSalesPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineEntryMethodId",
+					"Description": "The unique identifier of a Transaction Line Entry Method.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineEntryMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemScanTimestamp",
+					"Description": "The timestamp the transaction line item was scanned.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineItemScanTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PosDeviceId",
+					"Description": "The unique identifier of a POS Device.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PosDeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScaleUsedIndicator",
+					"Description": "Indicates that the scale was used to determine the weight of the item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ScaleUsedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ScaleMeasuredItemWeight",
+					"Description": "The weight of the line item on the scale for pricing purposes.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ScaleMeasuredItemWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WeightUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "WeightUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScaleQuantity",
+					"Description": "The quantity of Product ordered placed on the scale.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ScaleQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineVolume",
+					"Description": "The volume of the line item for pricing purposes.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "VolumeUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "VolumeUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductPriceOverrideIndicator",
+					"Description": "Indicates that the standard product price amount from the price list has been overridden.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ProductPriceOverrideIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ProductPriceAdjustmentAmount",
+					"Description": "The per product unit adjustment amount applied to each product unit.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ProductPriceAdjustmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductPriceAdjustmentPercentage",
+					"Description": "The per product unit adjustment percentage applied to each product unit.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ProductPriceAdjustmentPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalLineItemAdjustmentAmount",
+					"Description": "The amount of adjustment for all line items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TotalLineItemAdjustmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LineItemNote",
+					"Description": "A note, comment or additional information regarding the Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "LineItemNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "QuantityBooked",
+					"Description": "The quantity of Product booked.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "QuantityBooked"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "QuantityBilled",
+					"Description": "The quantity billed.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "QuantityBilled"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "QuantityBacklog",
+					"Description": "The quantity on backlog.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "QuantityBacklog"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AcceptedQuantity",
+					"Description": "The quantity of Line Item products accepted.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "AcceptedQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "QuantityCancelled",
+					"Description": "The quantity of Line Items cancelled.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "QuantityCancelled"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "QuantityReturned",
+					"Description": "The quantity of Line Items returned.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "QuantityReturned"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BookedTimestamp",
+					"Description": "The booked date of the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "BookedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BilledTimestamp",
+					"Description": "The billed date of the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "BilledTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CancelledTimestamp",
+					"Description": "The date  and time that Line Items were cancelled.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "CancelledTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReturnedTimestamp",
+					"Description": "The date that Line Items were returned.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ReturnedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CommittedShipmentTimestamp",
+					"Description": "The timestamp committed for shipment of the Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "CommittedShipmentTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RequestedDeliveryTimestamp",
+					"Description": "The timestamp for delivery of the Line Item requested by the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "RequestedDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CommittedDeliveryTimestamp",
+					"Description": "The timestamp committed for delivery of the Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "CommittedDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CommittedAvailableForPickupTimestamp",
+					"Description": "The timestamp committed for the Line Item to be available for pickup.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "CommittedAvailableForPickupTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedPickTimestamp",
+					"Description": "The planned inventory pick timestamp for the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PlannedPickTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualPickTimestamp",
+					"Description": "The actual inventory pick timestamp for the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ActualPickTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedShipmentTimestamp",
+					"Description": "The planned shipment timestamp of the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PlannedShipmentTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualShipmentTimestamp",
+					"Description": "The actual shipment timestamp of the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ActualShipmentTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDeliveryTimestamp",
+					"Description": "The planned delivery timestamp of the Line Items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PlannedDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualDeliveryTimestamp",
+					"Description": "The actual delivery timestamp of the line items.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ActualDeliveryTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DeliveryConfirmationTimestamp",
+					"Description": "The timestamp that the shipment/delivery confirmation notice was sent to the Customer/Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "DeliveryConfirmationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeAmount",
+					"Description": "The amount the customer has been charged for shipping.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ShipmentChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentCostAmount",
+					"Description": "The amount that the shipping cost.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ShipmentCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PickPackageCostAmount",
+					"Description": "The cost associated with picking a packing the item. This amount is normally included in the overall shipment cost.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PickPackageCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentMethodId",
+					"Description": "The unique identifier of a Shipment Method.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ShipmentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DropShipLineItemIndicator",
+					"Description": "Indicates that the Line Item(s) are to be drop shipped.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "DropShipLineItemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "WaybillNumber",
+					"Description": "The shipment waybill number.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "WaybillNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TareWeight",
+					"Description": "The weight of the line items excluding packaging.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TareWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NetWeight",
+					"Description": "The weight of the line items including packaging.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "NetWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipCompleteIndicator",
+					"Description": "Indicates that the Transaction item(s) are only to be shipped when complete - no partial shipments.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ShipCompleteIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EarliestDeliveryWindowTimestamp",
+					"Description": "The earliest timestamp that the transaction should be made available for delivery.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "EarliestDeliveryWindowTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LatestDeliveryWindowTimestamp",
+					"Description": "The latest timestamp that the transaction should be made available for delivery.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "LatestDeliveryWindowTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReturnOfTransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ReturnOfTransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReturnOfTransactionLineItemId",
+					"Description": "The unique identifier that identifies the Transaction Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ReturnOfTransactionLineItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReturnToStockIndicator",
+					"Description": "Indicates that the Line Item(s) were returned to stock.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ReturnToStockIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ReturnToStoreIndicator",
+					"Description": "Indicates that the Line Item(s) were returned to the store from which they were purchased.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ReturnToStoreIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ApprovedByEmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "ApprovedByEmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SalesChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "SalesChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistributionChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "DistributionChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionLineItemTypeId",
+					"Description": "The unique identifier of a Transaction Line Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "TransactionLineItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelPumpId",
+					"Description": "The unique identifier of a Fuel Pump.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "FuelPumpId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BuyClassId",
+					"Description": "The unique identifier of a Buy Class.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "BuyClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PromotionId",
+					"Description": "The unique identifier of a Promotion.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PromotionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PharmacyId",
+					"Description": "The number assigned by the NABP to identify the pharmacy",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PharmacyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PharmacyTransactionId",
+					"Description": "The number assigned by the Pharmacy to identify prescription fulfillment.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PharmacyTransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PromotionOfferId",
+					"Description": "The unique identifier of a Promotion Offer. The Promotion Offer ID is unique to each account or party that is offered to.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionLineItem.cdm.json/TransactionLineItem",
+						"Name": "PromotionOfferId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://raw@rpadfmetadata.dfs.core.windows.net/global/asql/saleslt/TransactionLineItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://raw@rpadfmetadata.dfs.core.windows.net/global/asql/saleslt/TransactionLineItem",
+				"Properties": {
+					"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionId\"},\"TransactionLineItemId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemId\"},\"TransactionLineItemStartTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemStartTimestamp\"},\"TransactionLineItemCompletedTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemCompletedTimestamp\"},\"ProductId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductId\"},\"ItemSku\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ItemSku\"},\"UniversalProductCode\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"UniversalProductCode\"},\"Quantity\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"Quantity\"},\"UnitOfMeasureId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"UnitOfMeasureId\"},\"PreorderIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PreorderIndicator\"},\"ProductListPriceAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductListPriceAmount\"},\"TransactionProductPriceAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionProductPriceAmount\"},\"IsoCurrencyCode\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"IsoCurrencyCode\"},\"FreeSampleIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"FreeSampleIndicator\"},\"TotalTransactionLineItemAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TotalTransactionLineItemAmount\"},\"TotalTransactionSalesPriceAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TotalTransactionSalesPriceAmount\"},\"TransactionLineEntryMethodId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineEntryMethodId\"},\"TransactionLineItemScanTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemScanTimestamp\"},\"PosDeviceId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PosDeviceId\"},\"ScaleUsedIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ScaleUsedIndicator\"},\"ScaleMeasuredItemWeight\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ScaleMeasuredItemWeight\"},\"WeightUomId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"WeightUomId\"},\"ScaleQuantity\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ScaleQuantity\"},\"TransactionLineVolume\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineVolume\"},\"VolumeUomId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"VolumeUomId\"},\"ProductPriceOverrideIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductPriceOverrideIndicator\"},\"ProductPriceAdjustmentAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductPriceAdjustmentAmount\"},\"ProductPriceAdjustmentPercentage\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductPriceAdjustmentPercentage\"},\"TotalLineItemAdjustmentAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TotalLineItemAdjustmentAmount\"},\"LineItemNote\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"LineItemNote\"},\"QuantityBooked\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityBooked\"},\"QuantityBilled\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityBilled\"},\"QuantityBacklog\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityBacklog\"},\"AcceptedQuantity\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"AcceptedQuantity\"},\"QuantityCancelled\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityCancelled\"},\"QuantityReturned\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityReturned\"},\"BookedTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"BookedTimestamp\"},\"BilledTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"BilledTimestamp\"},\"CancelledTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CancelledTimestamp\"},\"ReturnedTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnedTimestamp\"},\"CommittedShipmentTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CommittedShipmentTimestamp\"},\"RequestedDeliveryTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"RequestedDeliveryTimestamp\"},\"CommittedDeliveryTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CommittedDeliveryTimestamp\"},\"CommittedAvailableForPickupTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CommittedAvailableForPickupTimestamp\"},\"PlannedPickTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PlannedPickTimestamp\"},\"ActualPickTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ActualPickTimestamp\"},\"PlannedShipmentTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PlannedShipmentTimestamp\"},\"ActualShipmentTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ActualShipmentTimestamp\"},\"PlannedDeliveryTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PlannedDeliveryTimestamp\"},\"ActualDeliveryTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ActualDeliveryTimestamp\"},\"DeliveryConfirmationTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"DeliveryConfirmationTimestamp\"},\"ShipmentChargeAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipmentChargeAmount\"},\"ShipmentCostAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipmentCostAmount\"},\"PickPackageCostAmount\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PickPackageCostAmount\"},\"ShippingLocationId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShippingLocationId\"},\"ShipmentMethodId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipmentMethodId\"},\"DropShipLineItemIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"DropShipLineItemIndicator\"},\"WaybillNumber\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"WaybillNumber\"},\"TareWeight\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TareWeight\"},\"NetWeight\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"NetWeight\"},\"ShipCompleteIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipCompleteIndicator\"},\"EarliestDeliveryWindowTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"EarliestDeliveryWindowTimestamp\"},\"LatestDeliveryWindowTimestamp\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"LatestDeliveryWindowTimestamp\"},\"ReturnOfTransactionId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnOfTransactionId\"},\"ReturnOfTransactionLineItemId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnOfTransactionLineItemId\"},\"ReturnToStockIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnToStockIndicator\"},\"ReturnToStoreIndicator\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnToStoreIndicator\"},\"ApprovedByEmployeeId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ApprovedByEmployeeId\"},\"SalesChannelId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"SalesChannelId\"},\"DistributionChannelId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"DistributionChannelId\"},\"TransactionLineItemTypeId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemTypeId\"},\"FuelPumpId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"FuelPumpId\"},\"BuyClassId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"BuyClassId\"},\"PromotionId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PromotionId\"},\"PharmacyId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PharmacyId\"},\"PharmacyTransactionId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PharmacyTransactionId\"},\"PromotionOfferId\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PromotionOfferId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionLineItem\",\"path\":\"TransactionLineItem.cdm.json/TransactionLineItem\"},\"description\":\"The components of an Transaction broken down by Product and Quantity, one per line item.\",\"primaryKey\":[\"TransactionId\",\"TransactionLineItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"TransactionId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemStartTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemStartTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemCompletedTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemCompletedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ItemSku\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20},{\"type\":\"Existing\",\"name\":\"UniversalProductCode\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"UniversalProductCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":12,\"scale\":0},{\"type\":\"Existing\",\"name\":\"Quantity\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"UnitOfMeasureId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PreorderIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PreorderIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ProductListPriceAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductListPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionProductPriceAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionProductPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"IsoCurrencyCode\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3},{\"type\":\"Existing\",\"name\":\"FreeSampleIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"FreeSampleIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"TotalTransactionLineItemAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TotalTransactionLineItemAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TotalTransactionSalesPriceAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TotalTransactionSalesPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionLineEntryMethodId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineEntryMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemScanTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemScanTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PosDeviceId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PosDeviceId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScaleUsedIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ScaleUsedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ScaleMeasuredItemWeight\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ScaleMeasuredItemWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"WeightUomId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"WeightUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ScaleQuantity\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ScaleQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"TransactionLineVolume\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"VolumeUomId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"VolumeUomId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ProductPriceOverrideIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductPriceOverrideIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ProductPriceAdjustmentAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductPriceAdjustmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ProductPriceAdjustmentPercentage\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ProductPriceAdjustmentPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"TotalLineItemAdjustmentAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TotalLineItemAdjustmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"LineItemNote\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"LineItemNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024},{\"type\":\"Existing\",\"name\":\"QuantityBooked\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityBooked\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"QuantityBilled\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityBilled\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"QuantityBacklog\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityBacklog\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AcceptedQuantity\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"AcceptedQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"QuantityCancelled\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityCancelled\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"QuantityReturned\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"QuantityReturned\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BookedTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"BookedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"BilledTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"BilledTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CancelledTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CancelledTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ReturnedTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnedTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CommittedShipmentTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CommittedShipmentTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"RequestedDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"RequestedDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CommittedDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CommittedDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"CommittedAvailableForPickupTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"CommittedAvailableForPickupTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedPickTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PlannedPickTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualPickTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ActualPickTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedShipmentTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PlannedShipmentTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualShipmentTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ActualShipmentTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"PlannedDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PlannedDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ActualDeliveryTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ActualDeliveryTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"DeliveryConfirmationTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"DeliveryConfirmationTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ShipmentChargeAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipmentChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShipmentCostAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipmentCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"PickPackageCostAmount\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PickPackageCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":2},{\"type\":\"Existing\",\"name\":\"ShippingLocationId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ShipmentMethodId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipmentMethodId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DropShipLineItemIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"DropShipLineItemIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"WaybillNumber\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"WaybillNumber\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TareWeight\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TareWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"NetWeight\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"NetWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"scale\":8},{\"type\":\"Existing\",\"name\":\"ShipCompleteIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ShipCompleteIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"EarliestDeliveryWindowTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"EarliestDeliveryWindowTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"LatestDeliveryWindowTimestamp\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"LatestDeliveryWindowTimestamp\"},\"dataType\":\"timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"name\":\"ReturnOfTransactionId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnOfTransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"ReturnOfTransactionLineItemId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnOfTransactionLineItemId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"ReturnToStockIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnToStockIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ReturnToStoreIndicator\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ReturnToStoreIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"ApprovedByEmployeeId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"ApprovedByEmployeeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"SalesChannelId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"SalesChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"DistributionChannelId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"DistributionChannelId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"TransactionLineItemTypeId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"TransactionLineItemTypeId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FuelPumpId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"FuelPumpId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"BuyClassId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"BuyClassId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PromotionId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PromotionId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PharmacyId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PharmacyId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"PharmacyTransactionId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PharmacyTransactionId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"PromotionOfferId\",\"attributeReference\":{\"entity\":\"TransactionLineItem.cdm.json/TransactionLineItem\",\"name\":\"PromotionOfferId\"},\"dataType\":\"integer\"}]}}}",
+			"Description": "The components of an Transaction broken down by Product and Quantity, one per line item.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#5F538F\"}",
+			"PrimaryKeys": "TransactionId,TransactionLineItemId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

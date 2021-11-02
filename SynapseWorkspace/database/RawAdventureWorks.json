@@ -1,0 +1,23 @@
+{
+	"name": "RawAdventureWorks",
+	"properties": {
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Retail\",\"Version\":\"0.1.0\"}}}"
+		},
+		"Name": "RawAdventureWorks",
+		"EntityType": "DATABASE",
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://raw@rpadfmetadata.dfs.core.windows.net/global/asql/saleslt",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "rpsynapsewsdi01-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
