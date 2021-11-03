@@ -1,18 +1,32 @@
 {
 	"name": "GoogleCloudStorage1",
 	"properties": {
+		"parameters": {
+			"serviceUrl": {
+				"type": "String",
+				"defaultValue": "https://storage.googleapis.com"
+			},
+			"accessKeyId": {
+				"type": "string",
+				"defaultValue": "GOOG-ACCESS-ID"
+			},
+			"secretName": {
+				"type": "string",
+				"defaultValue": "secretAccessKey"
+			}
+		},
 		"annotations": [],
 		"type": "GoogleCloudStorage",
 		"typeProperties": {
-			"serviceUrl": "https://storage.googleapis.com",
-			"accessKeyId": "asdfasdfsadfdasfsadfasdfasfasf",
+			"serviceUrl": "@{linkedService().serviceUrl}",
+			"accessKeyId": "@{linkedService().accessKeyId}",
 			"secretAccessKey": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "AzureKeyVault1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "SQLServer-AdventureWorks-Secret"
+				"secretName": "@{linkedService().secretName}"
 			}
 		},
 		"connectVia": {
